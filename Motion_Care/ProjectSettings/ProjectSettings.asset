@@ -83,7 +83,7 @@ PlayerSettings:
   androidApplicationEntry: 2
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
-  runInBackground: 0
+  runInBackground: 1
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
@@ -838,7 +838,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: DOTWEEN;OVR_DISABLE_HAND_PINCH_BUTTON_MAPPING
+    Android: DOTWEEN;OVR_DISABLE_HAND_PINCH_BUTTON_MAPPING;USE_STICK_CONTROL_THUMBSTICKS;USE_INPUT_SYSTEM_POSE_CONTROL
     EmbeddedLinux: DOTWEEN
     GameCoreScarlett: DOTWEEN
     GameCoreXboxOne: DOTWEEN
@@ -849,10 +849,10 @@ PlayerSettings:
     PS4: DOTWEEN
     PS5: DOTWEEN
     QNX: DOTWEEN
-    Standalone: DOTWEEN;OVR_DISABLE_HAND_PINCH_BUTTON_MAPPING
+    Standalone: DOTWEEN;OVR_DISABLE_HAND_PINCH_BUTTON_MAPPING;USE_STICK_CONTROL_THUMBSTICKS;USE_INPUT_SYSTEM_POSE_CONTROL
     VisionOS: DOTWEEN
     WebGL: DOTWEEN
-    Windows Store Apps: DOTWEEN
+    Windows Store Apps: DOTWEEN;USE_STICK_CONTROL_THUMBSTICKS;USE_INPUT_SYSTEM_POSE_CONTROL
     XboxOne: DOTWEEN
     iPhone: DOTWEEN
     tvOS: DOTWEEN
