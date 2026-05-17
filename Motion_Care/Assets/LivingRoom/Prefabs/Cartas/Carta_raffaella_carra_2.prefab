@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.038237
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.019999944
+      value: 0.0019999743
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6223733
+      value: -0.35299984
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalRotation.y
@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1143340153968252268, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_Name
-      value: Carta_raffaella_carra Variant
+      value: Carta_raffaella_carra_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143340153968252268, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1503368569777845433, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -60,7 +64,12 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 64b1009c5da0e6c48aea64a29258171c, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 8428612984107586086, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
+      propertyPath: type
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1693038349363264964, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
