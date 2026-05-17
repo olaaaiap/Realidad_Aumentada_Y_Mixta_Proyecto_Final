@@ -1,23 +1,61 @@
+using Oculus.Interaction.HandGrab;
 using UnityEngine;
 
 public enum ItemType
 {
-    PLATE, BOTTOMBREAD, TOMATO, LETTUCE, HAM, CHEESE, TOPBREAD,
-    
-    FISHBONE, SPONGE, GLOVE
+    GOOD, BAD
 }
 
+public enum ItemCategory
+{
+    PLATE,
+    
+    FOOD,
+    
+    TRASH
+}
+
+[RequireComponent(typeof(HandGrabInteractable))]
 public class ItemController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // VARIABLES //
+    
+    [SerializeField] private ItemType type;
+    [SerializeField] private ItemCategory category;
+    [SerializeField] private HandGrabInteractable grabInteractable;
+
+    private ItemType _nextItem;
+    
+    
+    // METHODS && FUNCTIONS //
+
+    private void Awake()
     {
-        
+        if (!grabInteractable)
+        {
+            grabInteractable = GetComponent<HandGrabInteractable>();
+        }
+    }
+    
+    public ItemCategory GetItemClass()
+    {
+        return this.category;
     }
 
-    // Update is called once per frame
-    void Update()
+    public ItemType GetItemType()
     {
+        return this.type;
+    }
+    
+    public void SetNextItem(ItemType nextItem)
+    {
+        _nextItem = nextItem;
+    }
+
+    private void ToggleGrab()
+    {
+        bool isEnabled = grabInteractable.isActiveAndEnabled;
         
+        grabInteractable.enabled = !isEnabled;
     }
 }

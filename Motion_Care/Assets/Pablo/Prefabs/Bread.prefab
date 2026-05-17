@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2179733473235005188}
   - component: {fileID: 2091652632057850846}
   - component: {fileID: 5119049015010910247}
+  - component: {fileID: 5925318042501295036}
   m_Layer: 0
   m_Name: Bread
   m_TagString: Untagged
@@ -175,6 +176,21 @@ MonoBehaviour:
   _defaultInteractable: {fileID: 0}
   _timeOutInteractable: {fileID: 0}
   _timeOut: 0
+--- !u!114 &5925318042501295036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398575755587145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770fafa3d9ec5364fb39bc96f4265a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemController
+  type: 1
+  category: 0
+  grabInteractable: {fileID: 2091652632057850846}
 --- !u!1 &799753194303374998
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,9 +343,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2554750713479733584}
-  - component: {fileID: 2878472075773183425}
+  - component: {fileID: 2580115750820036910}
   m_Layer: 0
-  m_Name: SnapInteractor
+  m_Name: Top_SnapInteractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,27 +366,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4361149396353187423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2878472075773183425
+--- !u!114 &2580115750820036910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3636963361803829346}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2756c251a8363df4f9d4b30ee6414bd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 06bd28341d3e86a4c8ab52b1a0269c7b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.SnapInteractor
-  _activeState: {fileID: 0}
-  _interactableFilters: []
-  _candidateTiebreaker: {fileID: 0}
-  _maxIterationsPerFrame: 3
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.SnapInteractable
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: 1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 2179733473235005188}
   _rigidbody: {fileID: 1133592087509590}
-  _distanceThreshold: 0.01
-  _snapPoseTransform: {fileID: 0}
-  _defaultInteractable: {fileID: 0}
-  _timeOutInteractable: {fileID: 0}
-  _timeOut: 0
+  _snapPoseDelegate: {fileID: 0}
+  _movementProvider: {fileID: 0}

@@ -924,7 +924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6793604839231024540, guid: e939911655b128e42833a6e387a1360f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.622
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 6793604839231024540, guid: e939911655b128e42833a6e387a1360f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.SnapInteractable
   _interactorFilters: []
   _maxInteractors: -1
-  _maxSelectingInteractors: -1
+  _maxSelectingInteractors: 1
   _data: {fileID: 0}
   _rigidbody: {fileID: 2100996994}
   _snapPoseDelegate: {fileID: 0}
