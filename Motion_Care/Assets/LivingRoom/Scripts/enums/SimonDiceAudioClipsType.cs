@@ -1,0 +1,21 @@
+public enum SimonDiceAudioClipsType
+{ 
+    IntroduccionSimonDice,
+    PrimeraPrueba,
+    SegundaPrueba,
+    TerceraPrueba,
+    LibroAmarillo,
+    LibroRosa,
+    LibroAzul,
+    LibroVerde,
+    TazaAzul,
+    TazaMorada,
+    TazaRoja,
+    TazaVerde,
+    Victoria,
+    Correcto,
+    ExitoSecuencia,
+    ExitoFinal,
+    Fallo,
+    FalloFinal,
+}
