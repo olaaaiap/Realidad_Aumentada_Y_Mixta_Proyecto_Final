@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4886870221513743856}
   m_Layer: 31
   m_Name: Bread
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1160333833396965141}
   m_Layer: 31
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 4412703292949685228}
   m_Layer: 31
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,10 +276,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2554750713479733584}
   - component: {fileID: 2580115750820036910}
+  - component: {fileID: 8152625853640293178}
   - component: {fileID: 7622782910632653147}
   m_Layer: 31
   m_Name: Top_SnapInteractable
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,13 +312,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06bd28341d3e86a4c8ab52b1a0269c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.SnapInteractable
-  _interactorFilters: []
+  _interactorFilters:
+  - {fileID: 8152625853640293178}
   _maxInteractors: -1
   _maxSelectingInteractors: 1
   _data: {fileID: 0}
   _rigidbody: {fileID: 1133592087509590}
   _snapPoseDelegate: {fileID: 0}
   _movementProvider: {fileID: 0}
+--- !u!114 &8152625853640293178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636963361803829346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d3a1facc5f29d4ea65d3af68af5c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.TagSetFilter
+  _requireTags:
+  - Food
+  - Trash
+  _excludeTags:
+  - Plate
 --- !u!114 &7622782910632653147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,7 +364,7 @@ GameObject:
   - component: {fileID: 42048248769481513}
   m_Layer: 31
   m_Name: Interactions
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,7 +398,7 @@ GameObject:
   - component: {fileID: 4989094994092014813}
   m_Layer: 31
   m_Name: Visuals
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,7 +432,7 @@ GameObject:
   - component: {fileID: 764080833185668949}
   m_Layer: 31
   m_Name: Bottom_SnapInteractor
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -470,7 +489,7 @@ GameObject:
   - component: {fileID: 4216358735014192391}
   m_Layer: 31
   m_Name: ISDK_HandGrabInteraction
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,7 +586,7 @@ GameObject:
   - component: {fileID: 7988702607624951951}
   m_Layer: 31
   m_Name: Ghost_Visual
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,8 +12,6 @@ public class GrabbableSocketController : MonoBehaviour
     [SerializeField] private SnapInteractable snapInter;
     [SerializeField] private List<MonoBehaviour> grabComponents;
 
-    private bool _isGrabbed = false;
-
 
     // METHODS && FUNCTIONS //
 
