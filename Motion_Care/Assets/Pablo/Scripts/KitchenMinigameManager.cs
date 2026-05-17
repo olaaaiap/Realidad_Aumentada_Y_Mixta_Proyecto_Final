@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = System.Random;
@@ -23,8 +24,7 @@ public class KitchenMinigameManager : MonoBehaviour
     private UnityEvent<bool> _checkRecipeEvent;
 
     // Metrics
-    private int _totalCorrect;
-    private int _totalWrong;
+    private ComparisonResult _results;
     
     // Auxilary variables
     private Random _random = new Random();
@@ -34,9 +34,11 @@ public class KitchenMinigameManager : MonoBehaviour
     
     private void Awake()
     {
+        if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<bool>();
+        
         _recipe = new List<ItemCategory>();
-        _totalCorrect = 0;
-        _totalWrong = 0;
+
+        _results = new ComparisonResult();
         
         if (instance == null)
         {
@@ -51,8 +53,6 @@ public class KitchenMinigameManager : MonoBehaviour
     private void Start()
     {
         // Creation of the recipe
-        if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<bool>();
-
         if (useTesting)
         {
             _recipe = testRecipe;
@@ -73,29 +73,50 @@ public class KitchenMinigameManager : MonoBehaviour
             _recipe.Add(ItemCategory.BREAD);
         }
     }
+    
+    // Function to get the results of each stage
+    public ComparisonResult GetResults() { return _results; }
 
     // Method to be called when the user wants to lock in the final sandwich
-    public void CheckRecipe(List<ItemCategory> sandwich)
+    public void CheckRecipe()
     {
         int nCorrect = 0;
         int nWrong = 0;
+
+        Stack<ItemController> sandwich = SandwichManager.instance.GetSandWich();
+
+        int min = Math.Min(sandwich.Count, _recipe.Count);
         
+        for (int i = 0; i < min; i++)
         {
-            for (int i = 0; i < _recipe.Count; i++)
+            ItemCategory currentItem = sandwich.ElementAt(i).GetItemCategory();
+            
+            if (_recipe[i] == currentItem)
             {
-                if (_recipe[i] == sandwich[i])
-                {
-                    nCorrect++;
-                }
-                else
-                {
-                    nWrong++;
-                }
+                nCorrect++;
+            }
+            else
+            {
+                nWrong++;
             }
         }
         
-        _totalCorrect += nCorrect;
-        _totalWrong += nWrong;
+        _results.SetCorrect(nCorrect);
+        _results.SetWrong(nWrong);
+
+        if (min < _recipe.Count)
+        {
+            int dif =  _recipe.Count - min;
+            _results.SetUnder(dif);
+        }
+
+        if (min < sandwich.Count)
+        {
+            int dif = sandwich.Count - min;
+            _results.SetOver(dif);
+        }
+        
+        _results.SaveResultData();
         
         _checkRecipeEvent?.Invoke(nCorrect == _recipe.Count);
     }

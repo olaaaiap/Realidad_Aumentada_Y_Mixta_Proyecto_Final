@@ -29,7 +29,7 @@ public class ItemController : MonoBehaviour
     
     // METHODS && FUNCTIONS //
     
-    public ItemCategory GetItemClass()
+    public ItemCategory GetItemCategory()
     {
         return this.category;
     }

@@ -213,7 +213,7 @@ MonoBehaviour:
   _data: {fileID: 0}
   _pointableElement: {fileID: 4897747150051324470}
   _rigidbody: {fileID: 6112699178354777696}
-  _distanceThreshold: 0.01
+  _distanceThreshold: 0.05
   _snapPoseTransform: {fileID: 0}
   _defaultInteractable: {fileID: 0}
   _timeOutInteractable: {fileID: 0}
