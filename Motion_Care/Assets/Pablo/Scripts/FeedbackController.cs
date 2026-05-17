@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,10 +16,13 @@ public class FeedbackController : MonoBehaviour
     {
         correctFeedback.SetActive(false);
         wrongFeedback.SetActive(false);
-        
+    }
+
+    private void Start()
+    {
         KitchenMinigameManager.instance.SubscribeToRecipeCheck(ShowFeedback);
     }
-    
+
     private void ShowFeedback(bool isCorrect)
     {
         StopAllCoroutines();

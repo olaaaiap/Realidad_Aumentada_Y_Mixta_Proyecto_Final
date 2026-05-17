@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1743435850272942208}
   m_Layer: 31
   m_Name: Colliders
-  m_TagString: Plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 762066306223731754}
   m_Layer: 31
   m_Name: Top_SnapInteractable
-  m_TagString: Plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.TagSetFilter
   _requireTags:
   - Food
-  - Trash
   _excludeTags:
   - Plate
 --- !u!114 &762066306223731754
@@ -172,9 +171,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5616350090152915215}
   - component: {fileID: 2238252454766183701}
+  - component: {fileID: 8315156262786821901}
   m_Layer: 31
   m_Name: Bottom_SnapInteractor
-  m_TagString: Plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +218,20 @@ MonoBehaviour:
   _defaultInteractable: {fileID: 0}
   _timeOutInteractable: {fileID: 0}
   _timeOut: 0
+--- !u!114 &8315156262786821901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959358425406612970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdeaf26e845dc5841bcd31de97d26003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.TagSet
+  _tags:
+  - Plate
 --- !u!1 &4809668398140968984
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +277,7 @@ GameObject:
   - component: {fileID: 8376733576154793911}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +310,7 @@ GameObject:
   - component: {fileID: 4355547571566931509}
   m_Layer: 31
   m_Name: ISDK_HandGrabInteraction
-  m_TagString: Plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -427,7 +441,7 @@ GameObject:
   - component: {fileID: 600183810079910621}
   m_Layer: 31
   m_Name: Plate
-  m_TagString: Plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,7 +611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8488800127817497392, guid: c50269bacdbd357448dac48904b6dadb, type: 3}
       propertyPath: m_TagString
-      value: Plate
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -687,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8488800127817497392, guid: c50269bacdbd357448dac48904b6dadb, type: 3}
       propertyPath: m_TagString
-      value: Plate
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

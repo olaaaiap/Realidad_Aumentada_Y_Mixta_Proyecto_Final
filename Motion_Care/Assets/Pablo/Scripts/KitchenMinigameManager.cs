@@ -8,7 +8,7 @@ public class KitchenMinigameManager : MonoBehaviour
 {
     // VARIABLES //
     
-    // GameManager
+    // GameManager singleton
     public static KitchenMinigameManager instance;
 
     // Testing variables

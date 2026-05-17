@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3166041778883794600}
   m_Layer: 31
   m_Name: Lettuce
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1160333833396965141}
   m_Layer: 31
   m_Name: Colliders
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 4412703292949685228}
   m_Layer: 31
   m_Name: Model
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 36001967674815069}
   m_Layer: 31
   m_Name: Top_SnapInteractable
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.TagSetFilter
   _requireTags:
   - Food
-  - Trash
   _excludeTags:
   - Plate
 --- !u!1 &5279482151004798571
@@ -366,7 +365,7 @@ GameObject:
   - component: {fileID: 6167090928252911814}
   m_Layer: 31
   m_Name: Ghost_Visual
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +453,7 @@ GameObject:
   - component: {fileID: 1601853913882709804}
   m_Layer: 0
   m_Name: Interactions
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,7 +487,7 @@ GameObject:
   - component: {fileID: 2281024097480959359}
   m_Layer: 31
   m_Name: Visuals
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,9 +519,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8795431960419896670}
   - component: {fileID: 764080833185668949}
+  - component: {fileID: 1949208776693873418}
   m_Layer: 31
   m_Name: Bottom_SnapInteractor
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,6 +566,20 @@ MonoBehaviour:
   _defaultInteractable: {fileID: 0}
   _timeOutInteractable: {fileID: 0}
   _timeOut: 0
+--- !u!114 &1949208776693873418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7105886773431692678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdeaf26e845dc5841bcd31de97d26003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.TagSet
+  _tags:
+  - Food
 --- !u!1 &7979073939339231983
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +593,7 @@ GameObject:
   - component: {fileID: 4216358735014192391}
   m_Layer: 31
   m_Name: ISDK_HandGrabInteraction
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
