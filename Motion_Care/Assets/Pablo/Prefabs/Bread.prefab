@@ -263,8 +263,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2554750713479733584}
   - component: {fileID: 2580115750820036910}
+  - component: {fileID: 7622782910632653147}
   m_Layer: 31
-  m_Name: Top_SnapInteractor
+  m_Name: Top_SnapInteractable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,6 +305,22 @@ MonoBehaviour:
   _rigidbody: {fileID: 1133592087509590}
   _snapPoseDelegate: {fileID: 0}
   _movementProvider: {fileID: 0}
+--- !u!114 &7622782910632653147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3636963361803829346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3530e360630b8a14caec60d27c54c09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabbableSocketController
+  snapInter: {fileID: 2580115750820036910}
+  grabComponents:
+  - {fileID: 6879860768383565520}
+  - {fileID: 4216358735014192391}
 --- !u!1 &7105886773431692678
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +332,7 @@ GameObject:
   - component: {fileID: 8795431960419896670}
   - component: {fileID: 764080833185668949}
   m_Layer: 31
-  m_Name: Bottom_SnapInteractable
+  m_Name: Bottom_SnapInteractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
