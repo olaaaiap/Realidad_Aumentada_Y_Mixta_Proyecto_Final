@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 4500974255258453291}
   - component: {fileID: 6112699178354777696}
   - component: {fileID: 4897747150051324470}
+  - component: {fileID: 600183810079910621}
   m_Layer: 31
   m_Name: Plate
   m_TagString: Untagged
@@ -384,6 +385,20 @@ MonoBehaviour:
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
   _forceKinematicDisabled: 0
+--- !u!114 &600183810079910621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933745958159821837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770fafa3d9ec5364fb39bc96f4265a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemController
+  type: 0
+  category: 0
 --- !u!1001 &5212799126839597804
 PrefabInstance:
   m_ObjectHideFlags: 0

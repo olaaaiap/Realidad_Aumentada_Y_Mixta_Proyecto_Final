@@ -3,11 +3,6 @@ using UnityEngine;
 
 public enum ItemType
 {
-    GOOD, BAD
-}
-
-public enum ItemCategory
-{
     PLATE,
     
     FOOD,
@@ -15,27 +10,24 @@ public enum ItemCategory
     TRASH
 }
 
-[RequireComponent(typeof(HandGrabInteractable))]
+public enum ItemCategory
+{
+    PLATE, BREAD, TOMATO, LETTUCE, HAM, CHEESE,
+    
+    FISHBONE, SPONGE, GLOVE
+}
+
 public class ItemController : MonoBehaviour
 {
     // VARIABLES //
     
     [SerializeField] private ItemType type;
     [SerializeField] private ItemCategory category;
-    [SerializeField] private HandGrabInteractable grabInteractable;
 
     private ItemType _nextItem;
     
     
     // METHODS && FUNCTIONS //
-
-    private void Awake()
-    {
-        if (!grabInteractable)
-        {
-            grabInteractable = GetComponent<HandGrabInteractable>();
-        }
-    }
     
     public ItemCategory GetItemClass()
     {
@@ -45,17 +37,5 @@ public class ItemController : MonoBehaviour
     public ItemType GetItemType()
     {
         return this.type;
-    }
-    
-    public void SetNextItem(ItemType nextItem)
-    {
-        _nextItem = nextItem;
-    }
-
-    private void ToggleGrab()
-    {
-        bool isEnabled = grabInteractable.isActiveAndEnabled;
-        
-        grabInteractable.enabled = !isEnabled;
     }
 }

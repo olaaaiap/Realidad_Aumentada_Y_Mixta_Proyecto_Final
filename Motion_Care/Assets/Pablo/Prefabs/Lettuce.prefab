@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4361149396353187423}
   - component: {fileID: 1133592087509590}
   - component: {fileID: 2179733473235005188}
+  - component: {fileID: 3166041778883794600}
   m_Layer: 31
   m_Name: Lettuce
   m_TagString: Untagged
@@ -88,6 +89,20 @@ MonoBehaviour:
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
   _forceKinematicDisabled: 0
+--- !u!114 &3166041778883794600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398575755587145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770fafa3d9ec5364fb39bc96f4265a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemController
+  type: 1
+  category: 3
 --- !u!1 &799753194303374998
 GameObject:
   m_ObjectHideFlags: 0
