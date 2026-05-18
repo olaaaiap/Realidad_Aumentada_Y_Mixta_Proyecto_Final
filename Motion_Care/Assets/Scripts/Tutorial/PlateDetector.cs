@@ -13,8 +13,7 @@ public class PlateDetector : MonoBehaviour
 
         if(other.gameObject == appleTDetect)
         {
-
-            print("HOlaaa");
+            GetComponent<AudioSource>().Play();
             other.gameObject.SetActive(false);
             appleToActivate.SetActive(true);
 
