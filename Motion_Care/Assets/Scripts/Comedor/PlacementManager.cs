@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlacementManager : MonoBehaviour
 {
     public static PlacementManager Instance;
-
+    [SerializeField] private AudioSource aciertoAS;
     void Awake()
     {
         Instance = this;
@@ -34,10 +34,13 @@ public class PlacementManager : MonoBehaviour
             if (distance < slot.radioMargen)
             {
                 Debug.Log("Correcto");
+                if (aciertoAS != null) aciertoAS.Play();
+
                 obj.transform.position = slot.transform.position;
 
                 obj.transform.rotation = slot.transform.rotation;
                 obj.LockObject();
+                GameManagerComedor.Instance.CubiertoColocado();
             }
             else
             {
