@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8102810778786334392}
   - component: {fileID: 5924038993410144317}
   - component: {fileID: 2426892920619337132}
+  - component: {fileID: 6645483703658996969}
   m_Layer: 0
   m_Name: Book_4
   m_TagString: Untagged
@@ -297,3 +298,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284af4e1b213a6f4eb02a128d471eba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlinkEffect
+--- !u!114 &6645483703658996969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322613692346384287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07dcf5e9937060c4abe33012ffc3efc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeEffect
