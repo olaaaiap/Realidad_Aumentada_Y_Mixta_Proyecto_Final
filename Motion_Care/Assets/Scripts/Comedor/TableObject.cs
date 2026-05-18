@@ -8,7 +8,7 @@ public class TableObject : MonoBehaviour
 
     public void LockObject()
     {
-        // 1. bloquear interacción Meta
+        // 1. bloquear interacciï¿½n Meta
         var grab = GetComponent<HandGrabInteractable>();
         if (grab != null)
             grab.enabled = false;
@@ -17,11 +17,11 @@ public class TableObject : MonoBehaviour
         if (grabbable != null)
             grabbable.enabled = false;
 
-        // 2. bloquear física
+        // 2. bloquear fï¿½sica
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.isKinematic = true;
         }
