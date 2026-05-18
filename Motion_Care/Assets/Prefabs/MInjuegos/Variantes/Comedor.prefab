@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 515786502368037186}
   - component: {fileID: 8552441549755072284}
   - component: {fileID: 350532443966566447}
+  - component: {fileID: 4056126989450265665}
   m_Layer: 0
   m_Name: Tenedor
   m_TagString: Untagged
@@ -777,6 +778,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8becafc4bc3b3a64390fa6b4dcb4292e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReleaseDetector
+--- !u!114 &4056126989450265665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462948801429156314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ddbd01bda0d6441b7a72df9fe21988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFar
+  appleSpawn: {fileID: 4193939701076834041}
 --- !u!1 &1546917952796865965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1424,7 @@ GameObject:
   - component: {fileID: 6435294074586441246}
   - component: {fileID: 3998521565480645110}
   - component: {fileID: 5480425448812467938}
+  - component: {fileID: 8541976595171653722}
   m_Layer: 0
   m_Name: Cucharilla
   m_TagString: Untagged
@@ -1593,6 +1608,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableObject
   objectID: Cucharilla
+--- !u!114 &8541976595171653722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258176923808925687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ddbd01bda0d6441b7a72df9fe21988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFar
+  appleSpawn: {fileID: 1692634626769737627}
 --- !u!1 &2301275883545419538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3745,6 +3773,7 @@ GameObject:
   - component: {fileID: 7508460289952528203}
   - component: {fileID: 1768621043992718324}
   - component: {fileID: 2182937734401030200}
+  - component: {fileID: 6249851879057241589}
   m_Layer: 0
   m_Name: Cuchara
   m_TagString: Untagged
@@ -3928,6 +3957,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableObject
   objectID: Cuchara
+--- !u!114 &6249851879057241589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038095163172411553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ddbd01bda0d6441b7a72df9fe21988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFar
+  appleSpawn: {fileID: 55730927822205532}
 --- !u!1 &8250422006681277649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,6 +3986,7 @@ GameObject:
   - component: {fileID: 9025853822101882536}
   - component: {fileID: 1547248394908478385}
   - component: {fileID: 4532061765485640571}
+  - component: {fileID: 7994266344984402196}
   m_Layer: 0
   m_Name: Cuchillo
   m_TagString: Untagged
@@ -4127,6 +4170,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableObject
   objectID: Cuchillo
+--- !u!114 &7994266344984402196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250422006681277649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ddbd01bda0d6441b7a72df9fe21988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFar
+  appleSpawn: {fileID: 6544432317537538882}
 --- !u!1 &8521142491407218693
 GameObject:
   m_ObjectHideFlags: 0
@@ -4423,6 +4479,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2906533491704704492, guid: fe9d3d3494e146446bbb8ef6e0b83481, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5177498071372521196}
+    - targetCorrespondingSourceObject: {fileID: 2906533491704704492, guid: fe9d3d3494e146446bbb8ef6e0b83481, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7839863302758935740}
   m_SourcePrefab: {fileID: 100100000, guid: fe9d3d3494e146446bbb8ef6e0b83481, type: 3}
 --- !u!4 &3809234380841136188 stripped
 Transform:
@@ -4594,6 +4653,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableObject
   objectID: Plato
+--- !u!114 &7839863302758935740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582077064224303750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ddbd01bda0d6441b7a72df9fe21988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFar
+  appleSpawn: {fileID: 3809234380841136188}
 --- !u!1001 &2096105188183139475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5584,6 +5656,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4836441029753767446, guid: 963ac66f0e1e16d40b4a94328b26f371, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8931511141360193474}
+    - targetCorrespondingSourceObject: {fileID: 4836441029753767446, guid: 963ac66f0e1e16d40b4a94328b26f371, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2039613799227383744}
   m_SourcePrefab: {fileID: 100100000, guid: 963ac66f0e1e16d40b4a94328b26f371, type: 3}
 --- !u!1 &8139129994152008180 stripped
 GameObject:
@@ -5772,6 +5847,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableObject
   objectID: Copa
+--- !u!114 &2039613799227383744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139129994152008180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ddbd01bda0d6441b7a72df9fe21988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFar
+  appleSpawn: {fileID: 8914927379015009102}
 --- !u!4 &8914927379015009102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5212263258675305644, guid: 963ac66f0e1e16d40b4a94328b26f371, type: 3}
