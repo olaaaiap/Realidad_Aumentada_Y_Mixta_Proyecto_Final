@@ -79,6 +79,9 @@ public class GameManagerComedor : MonoBehaviour
                     pruebaActual = 4;
                     botella.SetActive(true);
                     break;
+                case 4:
+                    FindFirstObjectByType<GeneralGameManager>().NextGame();
+                    break;
             }
         }
     }
