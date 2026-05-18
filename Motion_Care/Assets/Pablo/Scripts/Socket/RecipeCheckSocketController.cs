@@ -23,7 +23,7 @@ public class RecipeCheckSocketController : MonoBehaviour
 
     private void Update()
     {
-        if (snapInteractable.InteractorViews.Any())
+        if (snapInteractable.InteractorViews.Any() && !KitchenMinigameManager.instance.HasChecked())
         {
             KitchenMinigameManager.instance.CheckRecipe();
         }
