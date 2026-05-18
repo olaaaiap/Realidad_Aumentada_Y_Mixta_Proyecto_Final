@@ -119,11 +119,27 @@ public class KitchenMinigameManager : MonoBehaviour
         _results.SaveResultData();
         
         _checkRecipeEvent?.Invoke(nCorrect == _recipe.Count);
+        
+        SandwichManager.instance.ShowSandwich();
+        ShowRecipe();
     }
 
     // Method to subscribe to the checking event 
     public void SubscribeToRecipeCheck(UnityAction<bool> callback)
     {
         _checkRecipeEvent.AddListener(callback);
+    }
+    
+    // Auxilary method to show the recipe in the console
+    public void ShowRecipe()
+    {
+        string content = "bottom to top: \n";
+        
+        foreach (ItemCategory item in _recipe)
+        {
+            content += item.ToString() + "\n";
+        }
+        
+        Debug.Log(content);
     }
 }

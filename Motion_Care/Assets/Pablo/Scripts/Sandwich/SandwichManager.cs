@@ -46,4 +46,16 @@ public class SandwichManager : MonoBehaviour
     {
         _sandwich.Clear();
     }
+
+    public void ShowSandwich()
+    {
+        string content = "bottom to top: \n";
+        
+        foreach (ItemController item in _sandwich)
+        {
+            content += item.GetItemCategory().ToString() + "\n";
+        }
+        
+        Debug.Log(content);
+    }
 }
