@@ -24,6 +24,9 @@ public class TutorialHandler : MonoBehaviour
     private IEnumerator NextCoroutine()
     {
         yield return new WaitForSeconds(2f);
+
+        if (current == -1) yield return new WaitForSeconds(11);
+
         foreach (GameObject step in steps)
         {
             step.transform.DOScale(0f, 1f).OnComplete(() =>
@@ -33,6 +36,8 @@ public class TutorialHandler : MonoBehaviour
             });
 
         }
+
+        if(current != -1) GetComponent<AudioSource>().Play(); 
 
         current++;
 

@@ -19,6 +19,9 @@ public class BookBoxDetector : MonoBehaviour
         other.GetComponent<BoxCollider>().enabled = false;
         other.GetComponent<Rigidbody>().isKinematic = true;
 
+        GetComponent<AudioSource>().Play();
+
+
         Sequence seq = DOTween.Sequence();
         seq.Append(other.transform.DOJump(appleToActivateDestiny.position, .1f, 1, 1f).SetEase(Ease.InOutSine));
         seq.Append(other.transform.DOMoveY(appleToActivateDestiny.transform.position.y - .1f, 1f).SetEase(Ease.InOutSine));

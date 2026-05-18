@@ -11,6 +11,8 @@ public class RespawnWhenFar : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = true;
             transform.position = appleSpawn.position;
             GetComponent<Rigidbody>().isKinematic = false;
+
+            GetComponent<AudioSource>().Play();
         }
     }
 }
