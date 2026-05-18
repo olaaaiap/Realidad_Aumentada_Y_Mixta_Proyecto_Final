@@ -22,6 +22,7 @@ public class KitchenMinigameManager : MonoBehaviour
     
     // Events
     private UnityEvent<bool> _checkRecipeEvent;
+    private bool _hasChecked;
 
     // Metrics
     private ComparisonResult _results;
@@ -34,12 +35,6 @@ public class KitchenMinigameManager : MonoBehaviour
     
     private void Awake()
     {
-        if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<bool>();
-        
-        _recipe = new List<ItemCategory>();
-
-        _results = new ComparisonResult();
-        
         if (instance == null)
         {
             instance = this;
@@ -48,6 +43,14 @@ public class KitchenMinigameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<bool>();
+        
+        _recipe = new List<ItemCategory>();
+
+        _results = new ComparisonResult();
+        
+        _hasChecked = false;
     }
 
     private void Start()
@@ -74,12 +77,20 @@ public class KitchenMinigameManager : MonoBehaviour
         }
     }
     
+    // Fucnction to see if the gameManager has checked the user's sandwich this round
+    public bool HasChecked()
+    {
+        return _hasChecked;
+    }
+    
     // Function to get the results of each stage
     public ComparisonResult GetResults() { return _results; }
 
     // Method to be called when the user wants to lock in the final sandwich
     public void CheckRecipe()
     {
+        _hasChecked = true;
+        
         int nCorrect = 0;
         int nWrong = 0;
 
@@ -119,11 +130,27 @@ public class KitchenMinigameManager : MonoBehaviour
         _results.SaveResultData();
         
         _checkRecipeEvent?.Invoke(nCorrect == _recipe.Count);
+        
+        SandwichManager.instance.ShowSandwich();
+        ShowRecipe();
     }
 
     // Method to subscribe to the checking event 
     public void SubscribeToRecipeCheck(UnityAction<bool> callback)
     {
         _checkRecipeEvent.AddListener(callback);
+    }
+    
+    // Auxilary method to show the recipe in the console
+    public void ShowRecipe()
+    {
+        string content = "bottom to top: \n";
+        
+        foreach (ItemCategory item in _recipe)
+        {
+            content += item.ToString() + "\n";
+        }
+        
+        Debug.Log(content);
     }
 }

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemController
   type: 1
   category: 5
+  snapInteractable: {fileID: 2580115750820036910}
 --- !u!1 &799753194303374998
 GameObject:
   m_ObjectHideFlags: 0
