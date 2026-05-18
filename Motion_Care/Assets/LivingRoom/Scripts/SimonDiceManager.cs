@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SimonDiceManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class SimonDiceManager : MonoBehaviour
     public Action OnPruebaFinalizada;
 
     private List<SimonDiceType> secuencia = new List<SimonDiceType>();
+    [SerializeField] private Transform hiddenPoint;
+    private Vector3[] originalPositions;
+
+
     private int indice = 0;
     private int fallos = 0;
     private bool pruebaActiva = false;
@@ -19,8 +24,43 @@ public class SimonDiceManager : MonoBehaviour
 
     void Start()
     {
+        originalPositions = new Vector3[gameObjects.Length];
+        FixAppearAnimation();
         StartCoroutine(FlujoSimonDice());
     }
+
+    private void FixAppearAnimation()
+    {
+
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            GameObject obj = gameObjects[i];
+
+            // Guardar posición original de cada objeto
+            originalPositions[i] = obj.transform.position;
+
+            obj.GetComponent<Rigidbody>().useGravity=false;
+            obj.GetComponent<Rigidbody>().isKinematic = true;
+
+            // Mover al punto oculto
+            obj.transform.position = hiddenPoint.position;
+
+            // Activar para que Meta registre bien la escala
+            obj.SetActive(true);
+        }
+    }
+    private void FixAppearAnimation2()
+    {
+        foreach (var type in secuencia)
+        {
+            int index = (int)type;
+
+            gameObjects[index].transform.position = originalPositions[index];
+            gameObjects[index].GetComponent<Rigidbody>().useGravity = true;
+            gameObjects[index].GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
+
 
     private IEnumerator FlujoSimonDice()
     {
@@ -46,6 +86,7 @@ public class SimonDiceManager : MonoBehaviour
         audioManager.ReproducirAudio(audioClips[(int)SimonDiceAudioClipsType.ExitoFinal]);
         while (audioManager.EstaReproduciendo())
             yield return null;
+        yield return new WaitForSeconds(5.0f);
 
         OnPruebaFinalizada?.Invoke();
     }
@@ -59,6 +100,8 @@ public class SimonDiceManager : MonoBehaviour
             SimonDiceType.Book3,
             SimonDiceType.Book4
         };
+
+        FixAppearAnimation2();
 
         secuenciaActual = Secuencia1;
 
@@ -112,6 +155,7 @@ public class SimonDiceManager : MonoBehaviour
             SimonDiceType.Mug3,
             SimonDiceType.Book3,
         };
+        FixAppearAnimation2();
 
         secuenciaActual = Secuencia2;
 
@@ -173,6 +217,7 @@ public class SimonDiceManager : MonoBehaviour
             SimonDiceType.Book3,
             SimonDiceType.Mug4,
         };
+        FixAppearAnimation2();
 
         secuenciaActual = Secuencia3;
 
@@ -227,15 +272,20 @@ public class SimonDiceManager : MonoBehaviour
         {
             fallos++;
 
+            audioManager.ReproducirAudio(audioClips[(int)SimonDiceAudioClipsType.Error]);
+            while (audioManager.EstaReproduciendo())
+                yield return null;
+
             if (fallos == 3)
             {
                 audioManager.ReproducirAudio(audioClips[(int)SimonDiceAudioClipsType.FalloFinal]);
                 pruebaActiva = false;
                 yield break;
             }
-
+            pruebaActiva = false;
             audioManager.ReproducirAudio(audioClips[(int)SimonDiceAudioClipsType.Fallo]);
             indice = 0;
+            pruebaActiva = true;
             yield return StartCoroutine(secuenciaActual());
             yield break;
         }

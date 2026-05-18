@@ -60,7 +60,7 @@ public class ParejasCartasManager : MonoBehaviour
     private void ActivarCartasInicio()
     {
         foreach (var carta in cartas)
-            carta.SetActive(true);
+            carta.GetComponent<AppearEffect>().Appear();
     }
 
     public void RegistrarCarta(CardInteractable carta)
@@ -106,7 +106,7 @@ public class ParejasCartasManager : MonoBehaviour
         }
         else
         {
-            audioManager.ReproducirAudio(audioClips[(int)ParejasCartasAudioClipsType.Fallo]);
+            audioManager.ReproducirAudio(audioClips[(int)ParejasCartasAudioClipsType.Error]);
 
             primeraCarta.GetComponent<TurnEffect>().Girar();
             segundaCarta.GetComponent<TurnEffect>().Girar();
