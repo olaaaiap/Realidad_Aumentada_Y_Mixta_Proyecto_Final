@@ -7,6 +7,7 @@ using static OVRPlugin;
 
 public class TutorialHandler : MonoBehaviour
 {
+    private bool starting;
     private int current = -1;
     [SerializeField] private List<GameObject> steps;
 
@@ -17,12 +18,16 @@ public class TutorialHandler : MonoBehaviour
 
     public void Next()
     {
+        if (current == 2) return;
+        if (starting) return;
+
         StartCoroutine(NextCoroutine());
 
     }
 
     private IEnumerator NextCoroutine()
     {
+        starting = true;
         yield return new WaitForSeconds(2f);
 
         if (current == -1) yield return new WaitForSeconds(11);
@@ -39,11 +44,14 @@ public class TutorialHandler : MonoBehaviour
 
         if(current != -1) GetComponent<AudioSource>().Play(); 
 
+        if(current<2)
         current++;
 
         yield return new WaitForSeconds(2f);
 
         steps[current].gameObject.SetActive(true);
         steps[current].transform.DOScale(1f, 1f);
+
+        starting = false;
     }
 }
