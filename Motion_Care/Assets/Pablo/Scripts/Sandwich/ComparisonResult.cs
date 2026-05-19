@@ -49,14 +49,14 @@ public class ComparisonResult
         // TODO: Llamada a JSON
     }
     
-    public int ComputeScore()
+    public int ComputeScore(int correctPoints = 10, int wrongPoints = -5, int overPoints = -3, int underPoints = -3)
     {
         int score = 0;
         
-        score += _nCorrect * 10;
-        score -= _nWrong * 5;
-        score -= _over * 3;
-        score -= _under * 3;
+        score += _nCorrect * correctPoints;
+        score -= _nWrong * wrongPoints;
+        score -= _over * overPoints;
+        score -= _under * underPoints;
 
         return Mathf.Max(score, 0);
     }

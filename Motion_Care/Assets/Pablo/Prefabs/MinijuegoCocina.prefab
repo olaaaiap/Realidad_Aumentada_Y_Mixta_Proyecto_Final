@@ -1782,12 +1782,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376855e7ddc7fb94a9a9e313c395e719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KitchenMinigameController
-  useTesting: 1
+  useTesting: 0
   testRecipe: 01000000040000000500000001000000
   nLevels: 0
   playDelay: 0
   startDifficulty: 0
-  nLevelItems: 
+  correctPoints: 10
+  wrongPoints: 5
+  overPoints: 3
+  underPoints: 3
+  nLevelItems: 020000000400000007000000
 --- !u!1 &7854242657380824663
 GameObject:
   m_ObjectHideFlags: 0

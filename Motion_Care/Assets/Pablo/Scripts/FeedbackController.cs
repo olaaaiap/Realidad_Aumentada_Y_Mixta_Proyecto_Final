@@ -52,6 +52,9 @@ public class FeedbackController : MonoBehaviour
     {
         ShowRecipie(KitchenMinigameManager.instance.GetRecipe());
         
-        resultText.text = $"Aciertos: {result.GetCorrect()} \n\nFallos: {result.GetTotalWrong()} \n\nPuntuación: {result.ComputeScore()}";
+        resultText.text = $"Aciertos: {result.GetCorrect()} " +
+                          $"\n\nFallos: {result.GetTotalWrong()} " +
+                          $"\n\nPuntuación: \n {result.ComputeScore(KitchenMinigameManager.instance.GetCorrectPoints(), KitchenMinigameManager.instance.GetWrongPoints(), KitchenMinigameManager.instance.GetOverPoints(), KitchenMinigameManager.instance.GetUnderPoints())}" +
+                          $" / {KitchenMinigameManager.instance.GetRecipe().Count * 10}";
     }
 }

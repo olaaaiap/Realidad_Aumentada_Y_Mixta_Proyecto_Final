@@ -31,6 +31,13 @@ public class KitchenMinigameManager : MonoBehaviour
     [SerializeField] private int playDelay;
     [SerializeField] private Difficulty startDifficulty;
     
+    // Score
+    [Header("Scoring Points")]
+    [SerializeField] private int correctPoints;
+    [SerializeField] private int wrongPoints;
+    [SerializeField] private int overPoints;
+    [SerializeField] private int underPoints;
+    
     // Sandwich characteristics
     [SerializeField] public Dictionary<ItemCategory, string> itemNames;
     private List<ItemCategory> _recipe;
@@ -54,6 +61,10 @@ public class KitchenMinigameManager : MonoBehaviour
     public bool HasChecked() { return _hasChecked; }
     public List<ItemCategory> GetRecipe() { return _recipe; }
     public ComparisonResult GetResults() { return _results; }
+    public int GetCorrectPoints() { return correctPoints; }
+    public int GetWrongPoints() { return wrongPoints; }
+    public int GetOverPoints() { return overPoints; }
+    public int GetUnderPoints() { return underPoints; }
     
     
     // METHODS && FUNCTIONS //
@@ -90,6 +101,9 @@ public class KitchenMinigameManager : MonoBehaviour
     // Function that initializes each level
     private void InitRecipe()
     {
+        // Empty the last recipe
+        _recipe.Clear();
+        
         // Creation of the recipe and call to event listeners
         if (useTesting)
         {
