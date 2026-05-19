@@ -139,7 +139,7 @@ public class KitchenMinigameManager : MonoBehaviour
         
         for (int i = 0; i < min; i++)
         {
-            ItemCategory currentItem = sandwich.ElementAt(i).GetItemCategory();
+            ItemCategory currentItem = sandwich.ElementAt((min - 1) - i).GetItemCategory();     // The stack must be read from top to bottom, so we need to reverse the order of access
             
             if (_recipe[i] == currentItem)
             {
