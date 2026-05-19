@@ -137,15 +137,12 @@ public class DataManager : Singleton<DataManager>
     public void SaveMovementMetric(
         string taskName,
         TaskType taskType,
-        bool panPositionFixed,
-        Deviation deviation,
-        List<Sample> samples
+        Deviation deviation
     )
     {
         Metric_Movement metric = new Metric_Movement(
-            panPositionFixed,
-            deviation,
-            samples
+            
+            deviation
         );
 
         CreateTask(taskName, taskType, metric);

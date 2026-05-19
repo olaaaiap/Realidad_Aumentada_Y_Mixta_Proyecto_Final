@@ -27,6 +27,9 @@ public class SimonDiceManager : MonoBehaviour
         originalPositions = new Vector3[gameObjects.Length];
         FixAppearAnimation();
         StartCoroutine(FlujoSimonDice());
+
+        DataManager.instance.StartSession();
+        ChronometerManager.instance.StartTimer();
     }
 
     private void FixAppearAnimation()
@@ -66,8 +69,19 @@ public class SimonDiceManager : MonoBehaviour
     {
         yield return StartCoroutine(Introduccion());
         yield return StartCoroutine(Prueba1());
+
+        DataManager.instance.SaveSequenceMetric("secuencia1", TaskType.sequence, 67, 67, 67);
+        ChronometerManager.instance.StartTimer();
+
         yield return StartCoroutine(Prueba2());
+
+        DataManager.instance.SaveSequenceMetric("secuencia2", TaskType.sequence, 67, 67, 67);
+        ChronometerManager.instance.StartTimer();
+
         yield return StartCoroutine(Prueba3());
+
+        DataManager.instance.SaveSequenceMetric("secuencia3", TaskType.sequence, 67, 67, 67);
+
         yield return StartCoroutine(FinalPrueba());
     }
 
