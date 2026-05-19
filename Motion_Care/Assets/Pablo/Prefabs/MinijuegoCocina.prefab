@@ -1783,8 +1783,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KitchenMinigameController
   useTesting: 1
-  testRecipe: 01000000050000000400000001000000
-  levelItems: 020000000400000007000000
+  testRecipe: 01000000040000000500000001000000
+  nLevels: 0
+  playDelay: 0
+  startDifficulty: 0
+  nLevelItems: 
 --- !u!1 &7854242657380824663
 GameObject:
   m_ObjectHideFlags: 0

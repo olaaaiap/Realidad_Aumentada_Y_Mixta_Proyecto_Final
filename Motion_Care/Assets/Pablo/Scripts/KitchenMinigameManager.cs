@@ -5,6 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = System.Random;
 
+public enum Difficulty
+{
+    EASY,
+    MEDIUM,
+    HARD
+}
+
 public class KitchenMinigameManager : MonoBehaviour
 {
     // VARIABLES //
@@ -13,8 +20,16 @@ public class KitchenMinigameManager : MonoBehaviour
     public static KitchenMinigameManager instance;
 
     // Testing variables
+    [Header("Testing")]
     [SerializeField] private bool useTesting;
     [SerializeField] private List<ItemCategory> testRecipe;
+    private Stack<ItemCategory> _testRecipe;
+    
+    // Level design
+    [Header("Level Design")] 
+    [SerializeField] private int nLevels;
+    [SerializeField] private int playDelay;
+    [SerializeField] private Difficulty startDifficulty;
     
     // Sandwich characteristics
     [SerializeField] public Dictionary<ItemCategory, string> itemNames;
@@ -71,11 +86,6 @@ public class KitchenMinigameManager : MonoBehaviour
         _hasStarted = false;
         _hasChecked = false;
     }
-
-    private void Start()
-    {
-        
-    }
     
     // Function that initializes each level
     private void InitRecipe()
@@ -89,7 +99,7 @@ public class KitchenMinigameManager : MonoBehaviour
         {
             _recipe.Add(ItemCategory.BREAD);
             
-            for (int i = 0; i < levelItems[0]; i++)
+            for (int i = 0; i < nLevelItems[0]; i++)
             {
                 int item = _random.Next(2, 6);
 

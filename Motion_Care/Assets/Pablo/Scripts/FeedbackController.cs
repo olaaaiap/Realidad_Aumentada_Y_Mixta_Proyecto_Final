@@ -53,12 +53,5 @@ public class FeedbackController : MonoBehaviour
         ShowRecipie(KitchenMinigameManager.instance.GetRecipe());
         
         resultText.text = $"Aciertos: {result.GetCorrect()} \n\nFallos: {result.GetTotalWrong()} \n\nPuntuación: {result.ComputeScore()}";
-        // StopAllCoroutines();
-        // StartCoroutine(FeedbackCoroutine(result));
     }
-    
-    // private void FeedbackCoroutine(ComparisonResult result)
-    // {
-    //     ResultText.text = $"Aciretos: {result.GetCorrect()} \n\nFallos: {result.GetTotalWrong()} \n\nPuntuación: {result.ComputeScore()}";
-    // }
 }
