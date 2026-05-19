@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GeneralGameManager : MonoBehaviour
@@ -9,6 +10,15 @@ public class GeneralGameManager : MonoBehaviour
 
     private GameObject[] games;
     private int currentIndex = 0;
+
+
+    public static GeneralGameManager Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
 
     void Start()
     {
