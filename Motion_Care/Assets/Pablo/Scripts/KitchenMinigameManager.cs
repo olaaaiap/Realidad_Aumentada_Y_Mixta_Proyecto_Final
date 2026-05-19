@@ -17,11 +17,14 @@ public class KitchenMinigameManager : MonoBehaviour
     [SerializeField] private List<ItemCategory> testRecipe;
     
     // Sandwich characteristics
+    [SerializeField] public Dictionary<ItemCategory, string> itemNames;
+    [SerializeField] private List<int> levelItems;
     private List<ItemCategory> _recipe;
-    private int _nItems = 3;
     
     // Events
-    private UnityEvent<bool> _checkRecipeEvent;
+    private UnityEvent<List<ItemCategory>> _startLevelEvent;
+    private UnityEvent<ComparisonResult> _checkRecipeEvent;
+    private bool _hasStarted;
     private bool _hasChecked;
 
     // Metrics
@@ -30,6 +33,13 @@ public class KitchenMinigameManager : MonoBehaviour
     // Auxilary variables
     private Random _random = new Random();
 
+    
+    // GETTERS && SETTERS //
+    public bool HasStarted() { return _hasStarted; }
+    public bool HasChecked() { return _hasChecked; }
+    public List<ItemCategory> GetRecipe() { return _recipe; }
+    public ComparisonResult GetResults() { return _results; }
+    
     
     // METHODS && FUNCTIONS //
     
@@ -44,18 +54,33 @@ public class KitchenMinigameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<bool>();
+        itemNames = new Dictionary<ItemCategory, string>();
+        itemNames[ItemCategory.BREAD] = "Pan";
+        itemNames[ItemCategory.HAM] = "Jamón";
+        itemNames[ItemCategory.CHEESE] = "Queso";
+        itemNames[ItemCategory.LETTUCE] = "Lechuga";
+        itemNames[ItemCategory.TOMATO] = "Tomate";
         
         _recipe = new List<ItemCategory>();
 
         _results = new ComparisonResult();
         
+        if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<ComparisonResult>();
+        if (_startLevelEvent == null) _startLevelEvent = new UnityEvent<List<ItemCategory>>();
+
+        _hasStarted = false;
         _hasChecked = false;
     }
 
     private void Start()
     {
-        // Creation of the recipe
+        
+    }
+    
+    // Function that initializes each level
+    private void InitRecipe()
+    {
+        // Creation of the recipe and call to event listeners
         if (useTesting)
         {
             _recipe = testRecipe;
@@ -64,7 +89,7 @@ public class KitchenMinigameManager : MonoBehaviour
         {
             _recipe.Add(ItemCategory.BREAD);
             
-            for (int i = 0; i < _nItems; i++)
+            for (int i = 0; i < levelItems[0]; i++)
             {
                 int item = _random.Next(2, 6);
 
@@ -77,18 +102,22 @@ public class KitchenMinigameManager : MonoBehaviour
         }
     }
     
-    // Fucnction to see if the gameManager has checked the user's sandwich this round
-    public bool HasChecked()
+    public void StartLevel()
     {
-        return _hasChecked;
+        _hasChecked = false;
+        _hasStarted = true;
+        
+        InitRecipe();
+        
+        _startLevelEvent.Invoke(_recipe);
+        
+        // TODO: position items on the table (coroutine with delay?)
     }
-    
-    // Function to get the results of each stage
-    public ComparisonResult GetResults() { return _results; }
 
     // Method to be called when the user wants to lock in the final sandwich
     public void CheckRecipe()
     {
+        _hasStarted = false;
         _hasChecked = true;
         
         int nCorrect = 0;
@@ -129,18 +158,33 @@ public class KitchenMinigameManager : MonoBehaviour
         
         _results.SaveResultData();
         
-        _checkRecipeEvent?.Invoke(nCorrect == _recipe.Count);
+        _checkRecipeEvent?.Invoke(_results);
         
-        SandwichManager.instance.ShowSandwich();
-        ShowRecipe();
+        // SandwichManager.instance.ShowSandwich();
+        // ShowRecipe();
     }
 
-    // Method to subscribe to the checking event 
-    public void SubscribeToRecipeCheck(UnityAction<bool> callback)
+    // Methods to subscribe / unsubscribe to the events 
+    public void SubscribeToStartLevel(UnityAction<List<ItemCategory>> callback)
+    {
+        _startLevelEvent.AddListener(callback);
+    }
+    
+    public void UnsubscribeToStartLevel(UnityAction<List<ItemCategory>> callback)
+    {
+        _startLevelEvent.RemoveListener(callback);
+    }
+    
+    public void SubscribeToRecipeCheck(UnityAction<ComparisonResult> callback)
     {
         _checkRecipeEvent.AddListener(callback);
     }
-    
+
+    public void UnsubscribeToRecipeCheck(UnityAction<ComparisonResult> callback)
+    {
+        _checkRecipeEvent.RemoveListener(callback);
+    }
+
     // Auxilary method to show the recipe in the console
     public void ShowRecipe()
     {

@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FeedbackController : MonoBehaviour
@@ -9,40 +11,54 @@ public class FeedbackController : MonoBehaviour
     [SerializeField] private GameObject correctFeedback;
     [SerializeField] private GameObject wrongFeedback;
     
+    [Header("Recipe Feedback")]
+    [SerializeField] private List<TextMeshProUGUI> recipeTexts;
+    
+    [Header("Results Feedback")]
+    [SerializeField] private TextMeshProUGUI resultText;
+    
     
     // METHODS && FUNCTIONS //
 
-    private void Awake()
-    {
-        correctFeedback.SetActive(false);
-        wrongFeedback.SetActive(false);
-    }
+    // private void Awake()
+    // {
+    //     correctFeedback.SetActive(false);
+    //     wrongFeedback.SetActive(false);
+    // }
 
     private void Start()
     {
-        KitchenMinigameManager.instance.SubscribeToRecipeCheck(ShowFeedback);
+        KitchenMinigameManager.instance.SubscribeToStartLevel(ShowRecipie);
+        KitchenMinigameManager.instance.SubscribeToRecipeCheck(ShowResults);
     }
 
-    private void ShowFeedback(bool isCorrect)
+    private void OnDestroy()
     {
-        StopAllCoroutines();
-        StartCoroutine(FeedbackCoroutine(isCorrect));
+        KitchenMinigameManager.instance.UnsubscribeToStartLevel(ShowRecipie);
+        KitchenMinigameManager.instance.UnsubscribeToRecipeCheck(ShowResults);
     }
 
-    private IEnumerator FeedbackCoroutine(bool isCorrect)
+    public void ShowRecipie(List<ItemCategory> recipe)
     {
-        if (isCorrect)
+        for (int i = 0; i < recipe.Count; i++)
         {
-            correctFeedback.SetActive(true);
+            recipeTexts[i].text = KitchenMinigameManager.instance.itemNames[recipe[i]];
         }
-        else
-        {
-            wrongFeedback.SetActive(true);
-        }
-        
-        yield return new WaitForSeconds(3.0f);
-        
-        correctFeedback.SetActive(false);
-        wrongFeedback.SetActive(false);
+
+        resultText.text = "";
     }
+    
+    private void ShowResults(ComparisonResult result)
+    {
+        ShowRecipie(KitchenMinigameManager.instance.GetRecipe());
+        
+        resultText.text = $"Aciertos: {result.GetCorrect()} \n\nFallos: {result.GetTotalWrong()} \n\nPuntuación: {result.ComputeScore()}";
+        // StopAllCoroutines();
+        // StartCoroutine(FeedbackCoroutine(result));
+    }
+    
+    // private void FeedbackCoroutine(ComparisonResult result)
+    // {
+    //     ResultText.text = $"Aciretos: {result.GetCorrect()} \n\nFallos: {result.GetTotalWrong()} \n\nPuntuación: {result.ComputeScore()}";
+    // }
 }
