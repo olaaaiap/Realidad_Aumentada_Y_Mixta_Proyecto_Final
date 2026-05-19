@@ -1,11 +1,8 @@
 using UnityEngine;
-
-public class Metric
+[System.Serializable]
+public abstract class Metric
 {
-    [SerializeField] private string name;
+    ///[SerializeField] private string name;
 
-    public virtual string FormattedData()
-    {
-        return "GENERIC TYPE: NO DATA";
-    }
+    //public virtual string FormattedData();
 }

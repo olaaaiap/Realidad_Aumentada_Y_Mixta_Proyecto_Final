@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Metric_Sequence : Metric
 {
     [SerializeField] private int steps_total;
@@ -13,8 +14,8 @@ public class Metric_Sequence : Metric
         this.steps_incorrect = steps_incorrect;
     }
 
-    public override string FormattedData()
-    {
-        return $"Steps Total: {steps_total}, Steps Correct: {steps_correct}, Steps Incorrect: {steps_incorrect}";
-    }
+    //public override string FormattedData()
+    //{
+    //    return $"Steps Total: {steps_total}, Steps Correct: {steps_correct}, Steps Incorrect: {steps_incorrect}";
+    //}
 }

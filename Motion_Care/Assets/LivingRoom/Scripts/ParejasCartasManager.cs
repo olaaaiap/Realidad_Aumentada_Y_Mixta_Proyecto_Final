@@ -23,6 +23,8 @@ public class ParejasCartasManager : MonoBehaviour
     {
         totalParejas = cartas.Length / 2;
         StartCoroutine(FlujoParejas());
+
+        ChronometerManager.instance.StartTimer();
     }
 
     private IEnumerator FlujoParejas()
@@ -55,6 +57,10 @@ public class ParejasCartasManager : MonoBehaviour
             yield return null;
 
         OnPruebaFinalizada?.Invoke();
+
+        DataManager.instance.SaveMemoryMetric("memory", TaskType.memory, 67, 67);
+        DataManager.instance.EndSession();
+
     }
 
     private void ActivarCartasInicio()

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Metric_Memory : Metric
 {
     [SerializeField] private int correct;
@@ -11,8 +12,8 @@ public class Metric_Memory : Metric
         this.incorrect = incorrect;
     }
 
-    public override string FormattedData()
-    {
-        return $"Correct: {correct}, Incorrect: {incorrect}";
-    }
+    //public override string FormattedData()
+    //{
+    //    return $"Correct: {correct}, Incorrect: {incorrect}";
+    //}
 }

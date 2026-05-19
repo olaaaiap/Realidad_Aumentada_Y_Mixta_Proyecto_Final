@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[System.Serializable]
 public class Profile
 {
     [SerializeField] private string condition;
