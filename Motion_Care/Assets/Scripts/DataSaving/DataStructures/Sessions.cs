@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class Sessions
 {
     [SerializeField] private string session_id;
     [SerializeField] private string date;
-    [SerializeField] private int duration_seconds;
-    [SerializeField] private List<Task> tasks;
+    public int duration_seconds;
+    public List<Task> tasks;
 
     public Sessions(string session_id, string date, int duration_seconds, List<Task> tasks)
     {

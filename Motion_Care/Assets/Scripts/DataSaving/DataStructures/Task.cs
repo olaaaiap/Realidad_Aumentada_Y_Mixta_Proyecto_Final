@@ -10,7 +10,8 @@ public class Task
     [SerializeField] private TaskType task_type;
     [SerializeField] private string started_at;
     [SerializeField] private string ended_at;
-    [SerializeField] private List<Metric> metrics;
+    public int time_to_complete;
+    [SerializeReference] private List<Metric> metrics;
 
     public Task(string task_id, string task_name, TaskType task_type, string started_at, string ended_at, List<Metric> metrics)
     {
@@ -32,7 +33,7 @@ public class Task
         data += "Metrics:\n";
         foreach (var metric in metrics)
         {
-            data += metric.FormattedData() + "\n";
+            //data += metric.FormattedData() + "\n";
         }
         return data;
     }

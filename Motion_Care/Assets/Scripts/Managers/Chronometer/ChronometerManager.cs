@@ -6,52 +6,25 @@ public class ChronometerManager : Singleton<ChronometerManager>
     private bool counting;
 
     private float timer;
-    private float sceneTimer;
 
     private void Update()
     {
+        if (!counting) return;
 
         timer += Time.deltaTime;
 
-        if (!counting) return;
-
-        sceneTimer += Time.deltaTime;
     }
 
     public void StartTimer()
     {
+        timer = 0;
         counting = true;
     }
 
-    public void StopTimer()
+    public int StopTimer()
     {
         counting = false;
-        SaveBasedOnScene();
-    }
-
-    public void SaveBasedOnScene()
-    {
-        string taskTime = ((int)sceneTimer).ToString();
-
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "Tutorial":
-
-                break;
-
-            case "Sala1_Cocina":
-
-                break;
-
-            case "Sala2_Comedor":
-
-                break;
-
-            case "Sala3_salaDeEstar":
-
-                break;
-
-        }
+        return (int)timer;
     }
 
     public void SaveGlobalTime()

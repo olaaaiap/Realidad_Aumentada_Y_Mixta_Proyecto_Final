@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Metric_Movement : Metric
 {
     [SerializeField] private bool pan_position_y_fixed;
@@ -14,17 +15,17 @@ public class Metric_Movement : Metric
         this.deviation_x = deviation_x;
         this.samples = samples;
     }
-    public override string FormattedData()
-    {
-        string data = $"Pan Position Y Fixed: {pan_position_y_fixed}\n";
-        data += deviation_x.FormattedData() + "\n";
-        data += "Samples:\n";
-        foreach (var sample in samples)
-        {
-            data += sample.FormattedData() + "\n";
-        }
-        return data;
-    }
+    //public override string FormattedData()
+    //{
+    //    string data = $"Pan Position Y Fixed: {pan_position_y_fixed}\n";
+    //    data += deviation_x.FormattedData() + "\n";
+    //    data += "Samples:\n";
+    //    foreach (var sample in samples)
+    //    {
+    //        data += sample.FormattedData() + "\n";
+    //    }
+    //    return data;
+    //}
 }
 
 public class Deviation
