@@ -60,4 +60,13 @@ public class ComparisonResult
 
         return Mathf.Max(score, 0);
     }
+
+    public void Reset()
+    {
+        _nCorrect = 0;
+        _nWrong = 0;
+        _over = 0;
+        _under = 0;
+        _totalWrong = 0;
+    }
 }

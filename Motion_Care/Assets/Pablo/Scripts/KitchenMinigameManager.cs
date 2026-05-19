@@ -116,6 +116,8 @@ public class KitchenMinigameManager : MonoBehaviour
     {
         _hasChecked = false;
         _hasStarted = true;
+
+        _results.Reset();
         
         InitRecipe();
         
@@ -174,7 +176,7 @@ public class KitchenMinigameManager : MonoBehaviour
         // ShowRecipe();
     }
 
-    // Methods to subscribe / unsubscribe to the events 
+    // Methods to subscribe/unsubscribe to the events 
     public void SubscribeToStartLevel(UnityAction<List<ItemCategory>> callback)
     {
         _startLevelEvent.AddListener(callback);
