@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -28,8 +29,15 @@ public class KitchenMinigameManager : MonoBehaviour
     // Level design
     [Header("Level Design")] 
     [SerializeField] private int nRounds;
+    [SerializeField] private List<int> nRoundItems;
     [SerializeField] private int playDelay;
     [SerializeField] private Difficulty startDifficulty;
+    [SerializeField] private List<Transform> easySpawnPoints;
+    [SerializeField] private List<Transform> mediumSpawnPoints;
+    [SerializeField] private List<Transform> hardSpawnPoints;
+    
+    private Difficulty _currentDifficulty;
+    private int _currentRound;
     
     // Score
     [Header("Scoring Points")]
@@ -39,9 +47,8 @@ public class KitchenMinigameManager : MonoBehaviour
     [SerializeField] private int underPoints;
     
     // Sandwich characteristics
-    [SerializeField] public Dictionary<ItemCategory, string> itemNames;
+    public Dictionary<ItemCategory, string> itemNames;
     private List<ItemCategory> _recipe;
-    [SerializeField] private List<int> nRoundItems;
     
     // Events
     private UnityEvent<List<ItemCategory>> _startRoundEvent;
@@ -116,7 +123,7 @@ public class KitchenMinigameManager : MonoBehaviour
         {
             _recipe.Add(ItemCategory.BREAD);
             
-            for (int i = 0; i < nRoundItems[0]; i++)
+            for (int i = 0; i < nRoundItems[(int) _currentDifficulty]; i++)
             {
                 int item = _random.Next(2, 6);
 
@@ -129,7 +136,12 @@ public class KitchenMinigameManager : MonoBehaviour
         }
     }
     
-    public void StartRound()
+    public void StartRoundCoroutine()
+    {
+        StartCoroutine(RoundCoroutine());
+    }
+
+    private IEnumerator RoundCoroutine()
     {
         _hasChecked = false;
         _hasStarted = true;
@@ -139,8 +151,20 @@ public class KitchenMinigameManager : MonoBehaviour
         InitRecipe();
         
         _startRoundEvent.Invoke(_recipe);
-        
-        // TODO: position items on the table (coroutine with delay?)
+        yield return new WaitForSeconds(playDelay);
+
+        switch (_currentDifficulty)
+        {
+            case Difficulty.EASY:
+                ItemSpawnManager.instance.SpawnItemsInOrder(_recipe, easySpawnPoints, true);
+                break;
+            case Difficulty.MEDIUM:
+                ItemSpawnManager.instance.SpawnItemsInOrder(_recipe, mediumSpawnPoints, true);
+                break;
+            case Difficulty.HARD:
+                ItemSpawnManager.instance.SpawnItemsInOrder(_recipe, hardSpawnPoints, true);
+                break;
+        }
         
         _roundStartTime = Time.time;
     }

@@ -20,12 +20,6 @@ public class FeedbackController : MonoBehaviour
     
     // METHODS && FUNCTIONS //
 
-    // private void Awake()
-    // {
-    //     correctFeedback.SetActive(false);
-    //     wrongFeedback.SetActive(false);
-    // }
-
     private void Start()
     {
         KitchenMinigameManager.instance.SubscribeToStartRound(ShowRecipie);

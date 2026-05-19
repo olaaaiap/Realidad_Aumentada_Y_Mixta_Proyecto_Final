@@ -836,6 +836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinijuegoCocina
       objectReference: {fileID: 0}
+    - target: {fileID: 4441255316563798979, guid: 1dfb32012551aa544874eb8565bf520f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4672413418369726067, guid: 1dfb32012551aa544874eb8565bf520f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
