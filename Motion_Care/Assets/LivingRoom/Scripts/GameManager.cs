@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         parejas.OnPruebaFinalizada += FinDelJuego;
 
         StartCoroutine(FlujoInicial());
+
     }
 
     private IEnumerator FlujoInicial()
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void LanzarParejas()
     {
+
         simonDice.gameObject.SetActive(false);
         parejas.gameObject.SetActive(true);
     }

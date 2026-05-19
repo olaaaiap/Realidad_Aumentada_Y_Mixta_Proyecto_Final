@@ -35,6 +35,9 @@ public class GameManagerComedor : MonoBehaviour
             presentationAS.Play();
         }
 
+        DataManager.instance.StartSession();
+        ChronometerManager.instance.StartTimer();
+
     }
 
 
@@ -57,8 +60,10 @@ public class GameManagerComedor : MonoBehaviour
                     });
 
                     dificultadMedia.SetActive(true);
-                   
 
+                    Deviation deviation = new Deviation(47, 47);
+                    DataManager.instance.SaveMovementMetric("cubiertoFacil", TaskType.memory, deviation);
+                    ChronometerManager.instance.StartTimer();
 
                     break;
                 case 2:
@@ -71,15 +76,28 @@ public class GameManagerComedor : MonoBehaviour
                     });
                     
                     dificultadDificil.SetActive(true);
-                    
+
+                    Deviation deviation2 = new Deviation(47, 47);
+                    DataManager.instance.SaveMovementMetric("cubiertoMedio", TaskType.memory, deviation2);
+                    ChronometerManager.instance.StartTimer();
+
                     break;
                 case 3:
                     if (prueba3AS != null && prueba3AS.isPlaying) prueba3AS.Stop();
                     if (prueba4AS != null) prueba4AS.Play();
                     pruebaActual = 4;
                     botella.SetActive(true);
+
+                    Deviation deviation3 = new Deviation(47, 47);
+                    DataManager.instance.SaveMovementMetric("cubiertoDificil", TaskType.memory, deviation3);
+                    ChronometerManager.instance.StartTimer();
+
                     break;
                 case 4:
+
+                    DataManager.instance.SavePouringMetric("pouring", TaskType.pouring, 47);
+                    DataManager.instance.EndSession();
+
                     FindFirstObjectByType<GeneralGameManager>().NextGame();
                     break;
             }
