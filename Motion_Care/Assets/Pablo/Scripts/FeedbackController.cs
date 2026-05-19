@@ -28,13 +28,13 @@ public class FeedbackController : MonoBehaviour
 
     private void Start()
     {
-        KitchenMinigameManager.instance.SubscribeToStartLevel(ShowRecipie);
+        KitchenMinigameManager.instance.SubscribeToStartRound(ShowRecipie);
         KitchenMinigameManager.instance.SubscribeToRecipeCheck(ShowResults);
     }
 
     private void OnDestroy()
     {
-        KitchenMinigameManager.instance.UnsubscribeToStartLevel(ShowRecipie);
+        KitchenMinigameManager.instance.UnsubscribeToStartRound(ShowRecipie);
         KitchenMinigameManager.instance.UnsubscribeToRecipeCheck(ShowResults);
     }
 

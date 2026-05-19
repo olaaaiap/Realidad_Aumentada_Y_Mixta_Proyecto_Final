@@ -12,16 +12,20 @@ public class ComparisonResult
 
     private int _totalWrong;
 
+    private float _time;
+
 
     // CONSTRUCTOR //
 
-    public ComparisonResult(int nCorrect = 0, int nWrong = 0, int over = 0, int under = 0)
+    public ComparisonResult(int nCorrect = 0, int nWrong = 0, int over = 0, int under = 0, float time = 0)
     {
         _nCorrect = nCorrect;
         _nWrong = nWrong;
         _over = over;
         _under = under;
         _totalWrong = nWrong + over + under;
+
+        _time = time;
     }
     
     
@@ -32,12 +36,14 @@ public class ComparisonResult
     public int GetOver() { return _over; }
     public int GetUnder() { return _under; }
     public int GetTotalWrong() { return _totalWrong; }
+    public float GetTime() { return _time; }
     
     public void SetCorrect(int nCorrect) { _nCorrect = nCorrect; }
     public void SetWrong(int nWrong) { _nWrong = nWrong; }
     public void SetOver(int over) { _over = over; }
     public void SetUnder(int under) { _under = under; }
     public void SetTotalWrong(int totalWrong) { _totalWrong = totalWrong; }
+    public void SetTime(float time) { _time = time; }
     
     
     // METHODS && FUNCTIONS //

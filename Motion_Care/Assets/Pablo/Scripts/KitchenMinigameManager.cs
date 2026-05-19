@@ -27,7 +27,7 @@ public class KitchenMinigameManager : MonoBehaviour
     
     // Level design
     [Header("Level Design")] 
-    [SerializeField] private int nLevels;
+    [SerializeField] private int nRounds;
     [SerializeField] private int playDelay;
     [SerializeField] private Difficulty startDifficulty;
     
@@ -41,16 +41,19 @@ public class KitchenMinigameManager : MonoBehaviour
     // Sandwich characteristics
     [SerializeField] public Dictionary<ItemCategory, string> itemNames;
     private List<ItemCategory> _recipe;
-    [SerializeField] private List<int> nLevelItems;
+    [SerializeField] private List<int> nRoundItems;
     
     // Events
-    private UnityEvent<List<ItemCategory>> _startLevelEvent;
+    private UnityEvent<List<ItemCategory>> _startRoundEvent;
     private UnityEvent<ComparisonResult> _checkRecipeEvent;
     private bool _hasStarted;
     private bool _hasChecked;
 
     // Metrics
     private ComparisonResult _results;
+    private float _levelTime;
+    private float _roundStartTime;
+    private float _roundEndTime;
     
     // Auxilary variables
     private Random _random = new Random();
@@ -92,13 +95,13 @@ public class KitchenMinigameManager : MonoBehaviour
         _results = new ComparisonResult();
         
         if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<ComparisonResult>();
-        if (_startLevelEvent == null) _startLevelEvent = new UnityEvent<List<ItemCategory>>();
+        if (_startRoundEvent == null) _startRoundEvent = new UnityEvent<List<ItemCategory>>();
 
         _hasStarted = false;
         _hasChecked = false;
     }
     
-    // Function that initializes each level
+    // Function that initializes each round
     private void InitRecipe()
     {
         // Empty the last recipe
@@ -113,7 +116,7 @@ public class KitchenMinigameManager : MonoBehaviour
         {
             _recipe.Add(ItemCategory.BREAD);
             
-            for (int i = 0; i < nLevelItems[0]; i++)
+            for (int i = 0; i < nRoundItems[0]; i++)
             {
                 int item = _random.Next(2, 6);
 
@@ -126,7 +129,7 @@ public class KitchenMinigameManager : MonoBehaviour
         }
     }
     
-    public void StartLevel()
+    public void StartRound()
     {
         _hasChecked = false;
         _hasStarted = true;
@@ -135,14 +138,19 @@ public class KitchenMinigameManager : MonoBehaviour
         
         InitRecipe();
         
-        _startLevelEvent.Invoke(_recipe);
+        _startRoundEvent.Invoke(_recipe);
         
         // TODO: position items on the table (coroutine with delay?)
+        
+        _roundStartTime = Time.time;
     }
 
     // Method to be called when the user wants to lock in the final sandwich
     public void CheckRecipe()
     {
+        _roundEndTime = Time.time;
+        _results.SetTime(_roundEndTime - _roundStartTime);
+        
         _hasStarted = false;
         _hasChecked = true;
         
@@ -185,20 +193,17 @@ public class KitchenMinigameManager : MonoBehaviour
         _results.SaveResultData();
         
         _checkRecipeEvent?.Invoke(_results);
-        
-        // SandwichManager.instance.ShowSandwich();
-        // ShowRecipe();
     }
 
     // Methods to subscribe/unsubscribe to the events 
-    public void SubscribeToStartLevel(UnityAction<List<ItemCategory>> callback)
+    public void SubscribeToStartRound(UnityAction<List<ItemCategory>> callback)
     {
-        _startLevelEvent.AddListener(callback);
+        _startRoundEvent.AddListener(callback);
     }
     
-    public void UnsubscribeToStartLevel(UnityAction<List<ItemCategory>> callback)
+    public void UnsubscribeToStartRound(UnityAction<List<ItemCategory>> callback)
     {
-        _startLevelEvent.RemoveListener(callback);
+        _startRoundEvent.RemoveListener(callback);
     }
     
     public void SubscribeToRecipeCheck(UnityAction<ComparisonResult> callback)

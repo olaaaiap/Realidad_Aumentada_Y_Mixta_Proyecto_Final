@@ -24,7 +24,7 @@ public class StartLevelSocketController : MonoBehaviour
     {
         if (snapInteractable.InteractorViews.Any() && !KitchenMinigameManager.instance.HasStarted())
         {
-            KitchenMinigameManager.instance.StartLevel();
+            KitchenMinigameManager.instance.StartRound();
         }
     }
 }
