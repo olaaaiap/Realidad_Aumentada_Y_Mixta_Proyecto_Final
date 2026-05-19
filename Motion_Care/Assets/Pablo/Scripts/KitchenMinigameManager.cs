@@ -33,8 +33,8 @@ public class KitchenMinigameManager : MonoBehaviour
     
     // Sandwich characteristics
     [SerializeField] public Dictionary<ItemCategory, string> itemNames;
-    [SerializeField] private List<int> levelItems;
     private List<ItemCategory> _recipe;
+    [SerializeField] private List<int> nLevelItems;
     
     // Events
     private UnityEvent<List<ItemCategory>> _startLevelEvent;
