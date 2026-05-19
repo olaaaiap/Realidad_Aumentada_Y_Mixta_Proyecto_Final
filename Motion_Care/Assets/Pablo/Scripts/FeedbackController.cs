@@ -42,7 +42,7 @@ public class FeedbackController : MonoBehaviour
     {
         for (int i = 0; i < recipe.Count; i++)
         {
-            recipeTexts[i].text = KitchenMinigameManager.instance.itemNames[recipe[i]];
+            recipeTexts[i].text = $"{i + 1}. {KitchenMinigameManager.instance.itemNames[recipe[i]]}";
         }
 
         resultText.text = "";
