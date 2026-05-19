@@ -204,10 +204,10 @@ public class DataManager : Singleton<DataManager>
 
     public void SaveCurrentUser()
     {
-        StartSession();
-        SaveMemoryMetric("Wajaka", TaskType.memory, 1, 2);
-        SavePouringMetric("Yipeeeee", TaskType.pouring, 10000);
-        EndSession();
+        //StartSession();
+        //SaveMemoryMetric("Wajaka", TaskType.memory, 1, 2);
+        //SavePouringMetric("Yipeeeee", TaskType.pouring, 10000);
+        //EndSession();
 
         // Añadir usuario actual a la lista
         usersDatabase.users.Add(currentUser);
