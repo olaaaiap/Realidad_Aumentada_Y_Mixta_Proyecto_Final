@@ -4870,7 +4870,7 @@ MonoBehaviour:
   testRecipe: 01000000040000000500000001000000
   nRounds: 3
   nRoundItems: 020000000300000005000000
-  playDelay: 0
+  playDelay: 3
   startDifficulty: 0
   easySpawnPoints:
   - {fileID: 6589719167850938333}

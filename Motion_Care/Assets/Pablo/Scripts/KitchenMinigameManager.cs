@@ -51,7 +51,7 @@ public class KitchenMinigameManager : MonoBehaviour
     private List<ItemCategory> _recipe;
     
     // Events
-    private UnityEvent<List<ItemCategory>> _startRoundEvent;
+    private UnityEvent<List<ItemCategory>, int> _startRoundEvent;
     private UnityEvent<ComparisonResult> _checkRecipeEvent;
     private bool _hasStarted;
     private bool _hasChecked;
@@ -105,7 +105,7 @@ public class KitchenMinigameManager : MonoBehaviour
         _results = new ComparisonResult();
         
         if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<ComparisonResult>();
-        if (_startRoundEvent == null) _startRoundEvent = new UnityEvent<List<ItemCategory>>();
+        if (_startRoundEvent == null) _startRoundEvent = new UnityEvent<List<ItemCategory>, int>();
 
         _hasStarted = false;
         _hasChecked = false;
@@ -167,7 +167,7 @@ public class KitchenMinigameManager : MonoBehaviour
         
         InitRecipe();
         
-        _startRoundEvent.Invoke(_recipe);
+        _startRoundEvent.Invoke(_recipe, playDelay);
         yield return new WaitForSeconds(playDelay);
 
         switch (_currentDifficulty)
@@ -243,12 +243,12 @@ public class KitchenMinigameManager : MonoBehaviour
     }
 
     // Methods to subscribe/unsubscribe to the events 
-    public void SubscribeToStartRound(UnityAction<List<ItemCategory>> callback)
+    public void SubscribeToStartRound(UnityAction<List<ItemCategory>, int> callback)
     {
         _startRoundEvent.AddListener(callback);
     }
     
-    public void UnsubscribeToStartRound(UnityAction<List<ItemCategory>> callback)
+    public void UnsubscribeToStartRound(UnityAction<List<ItemCategory>, int> callback)
     {
         _startRoundEvent.RemoveListener(callback);
     }

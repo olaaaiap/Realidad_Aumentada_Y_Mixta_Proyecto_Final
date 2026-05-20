@@ -22,24 +22,47 @@ public class FeedbackController : MonoBehaviour
 
     private void Start()
     {
-        KitchenMinigameManager.instance.SubscribeToStartRound(ShowRecipie);
+        KitchenMinigameManager.instance.SubscribeToStartRound(StartShowRecipeForTime);
         KitchenMinigameManager.instance.SubscribeToRecipeCheck(ShowResults);
     }
 
     private void OnDestroy()
     {
-        KitchenMinigameManager.instance.UnsubscribeToStartRound(ShowRecipie);
+        KitchenMinigameManager.instance.UnsubscribeToStartRound(StartShowRecipeForTime);
         KitchenMinigameManager.instance.UnsubscribeToRecipeCheck(ShowResults);
     }
 
-    public void ShowRecipie(List<ItemCategory> recipe)
+    private void ShowRecipie(List<ItemCategory> recipe)
     {
         for (int i = 0; i < recipe.Count; i++)
         {
             recipeTexts[i].text = $"{i + 1}. {KitchenMinigameManager.instance.itemNames[recipe[i]]}";
         }
+    }
 
+    private void StartShowRecipeForTime(List<ItemCategory> recipe, int time)
+    {
+        StartCoroutine(ShowRecipeForTimeCoroutine(recipe, time));
+    }
+
+    private IEnumerator ShowRecipeForTimeCoroutine(List<ItemCategory> recipe, int time)
+    {
+        // Show the recipe
+        for (int i = 0; i < recipe.Count; i++)
+        {
+            recipeTexts[i].text = $"{i + 1}. {KitchenMinigameManager.instance.itemNames[recipe[i]]}";
+        }
+        
         resultText.text = "";
+        
+        // Wait for the time
+        yield return new WaitForSeconds(time);
+        
+        // Hide the recipe
+        for (int i = 0; i < recipe.Count; i++)
+        {
+            recipeTexts[i].text = "";
+        }
     }
     
     private void ShowResults(ComparisonResult result)
