@@ -19,12 +19,13 @@ public class CupVolume : MonoBehaviour
         Drop drop = other.GetComponent<Drop>();
         if (drop == null || drop.counted) return;
 
-        Debug.Log("OnTriggerEnter");
+        Debug.Log("olaia. OnTriggerEnter");
         drop.counted = true;
 
         insideCount++;
         currentVolume += dropVolume;
-        PoolManager.instance.Despawn(other.gameObject);
+        Destroy(other.gameObject);
+        //PoolManager.instance.Despawn(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)

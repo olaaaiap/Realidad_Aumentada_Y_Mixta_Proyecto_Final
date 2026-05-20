@@ -8,6 +8,7 @@ public class BottlePour : MonoBehaviour
 
     [SerializeField] private GameObject dropPrefab;
     [SerializeField] private Transform tipTransform;
+    [SerializeField] private AudioSource victoriaAS;
     public CupVolume cup;
 
     private int totalDrops = 300;
@@ -15,7 +16,7 @@ public class BottlePour : MonoBehaviour
     private bool waterFinished = false;
     private Coroutine pourCoroutine;
 
-
+   
     void Update()
     {
         float angle = Vector3.Angle(transform.up, Vector3.up);
@@ -40,7 +41,7 @@ public class BottlePour : MonoBehaviour
         {
             waterDropped++;
 
-            var drop = PoolManager.instance.Spawn(dropPrefab);
+            var drop = Instantiate(dropPrefab);
             drop.transform.position = tipTransform.position + Random.insideUnitSphere * 0.02f;
             drop.transform.rotation = transform.rotation;
 
@@ -62,6 +63,9 @@ public class BottlePour : MonoBehaviour
             Debug.LogError("DataManager no encontrado!");
         }
 
+        yield return new WaitForSeconds(1f);
+
+        victoriaAS.Play();
         FindFirstObjectByType<GeneralGameManager>().NextGame();
     }
 

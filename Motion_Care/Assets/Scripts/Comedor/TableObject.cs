@@ -13,6 +13,22 @@ public class TableObject : MonoBehaviour
         if (grab != null)
             grab.enabled = false;
 
+
+        Transform pourSpace = transform.Find("PourSpace");
+
+        if (pourSpace != null)
+        {
+            Debug.Log("olaia. poursace encontrado");
+            CapsuleCollider capsule = pourSpace.GetComponent<CapsuleCollider>();
+
+            if (capsule != null)
+            {
+                Debug.Log("olaia. capsule enabled");
+                capsule.enabled = true;
+            }
+        }
+
+
         var grabbable = GetComponent<Grabbable>();
         if (grabbable != null)
             grabbable.enabled = false;

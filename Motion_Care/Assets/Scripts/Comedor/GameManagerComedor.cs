@@ -35,7 +35,6 @@ public class GameManagerComedor : MonoBehaviour
     void Start()
     {
 
-
         if (presentationAS != null)
         {
             presentationAS.Play();

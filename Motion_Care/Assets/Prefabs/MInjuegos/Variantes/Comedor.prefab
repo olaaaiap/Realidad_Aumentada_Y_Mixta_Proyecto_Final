@@ -1721,12 +1721,12 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.06959435
-  m_Height: 0.20527881
+  m_Radius: 0.09639451
+  m_Height: 0.23266155
   m_Direction: 1
-  m_Center: {x: 0.0010539999, y: 0.2987688, z: -0.0009443876}
+  m_Center: {x: -0.00037459566, y: 0.28507692, z: 0.002166407}
 --- !u!114 &8850497753074539428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2702,6 +2702,135 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlacementManager
   aciertoAS: {fileID: 1263527582889078832}
+--- !u!1 &4393403534891163165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3458551420791038018}
+  - component: {fileID: 1235601664581016549}
+  m_Layer: 0
+  m_Name: VictoriaAS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3458551420791038018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393403534891163165}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.79722035, y: 0.016180038, z: -0.19733989}
+  m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 558931850492392400}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1235601664581016549
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393403534891163165}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 68536e7ef9b8b7f44ab2585d286507b5, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4635601334989339521
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,6 +5538,10 @@ PrefabInstance:
       propertyPath: cup
       value: 
       objectReference: {fileID: 8850497753074539428}
+    - target: {fileID: 6110023944930247935, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: victoriaAS
+      value: 
+      objectReference: {fileID: 1235601664581016549}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5641,6 +5774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Comedor
       objectReference: {fileID: 0}
+    - target: {fileID: 8809897680625552066, guid: 0dd3f43093665ab4eba718397d232f6f, type: 3}
+      propertyPath: m_TagString
+      value: Mesa
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5674,6 +5811,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3191418453843863113, guid: 0dd3f43093665ab4eba718397d232f6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7899816740098742393}
+    - targetCorrespondingSourceObject: {fileID: 3191418453843863113, guid: 0dd3f43093665ab4eba718397d232f6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3458551420791038018}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd3f43093665ab4eba718397d232f6f, type: 3}
 --- !u!4 &558931850492392400 stripped
