@@ -238,8 +238,33 @@ public class KitchenMinigameManager : MonoBehaviour
         
         _results.SaveResultData();
         
+        CheckDifficultyProgression();
+        
         _checkRecipeEvent?.Invoke(_results);
 
+        CheckEndGame();
+    }
+
+    // Method to check if the difficulty should be increased for the next round
+    private void CheckDifficultyProgression()
+    {
+        if (_results.GetCorrect() == _recipe.Count && _results.GetTime() <= 60.0f)
+        {
+            switch (_currentDifficulty)
+            {
+                case Difficulty.EASY:
+                    _currentDifficulty = Difficulty.MEDIUM;
+                    break;
+                case Difficulty.MEDIUM:
+                    _currentDifficulty = Difficulty.HARD;
+                    break;
+            }
+        }
+    }
+    
+    // Method to check if the game has to end
+    private void CheckEndGame()
+    {
         if (_currentRound == nRounds)
         {
             _hasEnded = true;
