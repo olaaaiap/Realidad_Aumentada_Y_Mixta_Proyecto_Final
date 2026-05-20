@@ -112,6 +112,8 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
 
     private void Start()
     {
+        DataManager.instance.StartSession();
+        
         MinigameAudioManager.instance.PlayClip(introClipName);
     }
     
@@ -273,7 +275,7 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
         
         yield return new WaitForSeconds(MinigameAudioManager.instance.GetClipLength(endGameClipName));
         
-        // TODO: Call to end minigame on the general manager
+        DataManager.instance.EndSession();
     }
 
     // Methods to subscribe/unsubscribe to the events 
