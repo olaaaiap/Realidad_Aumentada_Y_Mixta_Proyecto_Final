@@ -72,7 +72,10 @@ public class PoolManager : Singleton<PoolManager>
         //Si el pool no tiene ningun elemento con ese nombre, crear una nueva lista
         if (!pool.ContainsKey(go.name))
         {
-            pool[go.name] = new List<GameObject>();
+
+            //pool[go.name] = new List<GameObject>();
+            Destroy(go);
+            return;
         }
 
         //Añadire el objeto al pool y desactivarlo de la escena

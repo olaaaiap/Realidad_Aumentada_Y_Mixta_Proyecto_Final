@@ -36,6 +36,13 @@ public class GeneralGameManager : MonoBehaviour
 
     public void NextGame()
     {
+        StartCoroutine(NextGameRoutine());
+    }
+
+    private IEnumerator NextGameRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+
         if (currentIndex < games.Length - 1)
         {
             currentIndex++;
