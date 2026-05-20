@@ -16,7 +16,7 @@ public enum ItemType
 
 public enum ItemCategory
 {
-    PLATE, BREAD, TOMATO, LETTUCE, HAM, CHEESE,
+    PLATE, BREAD, TOMATO, LETTUCE, SALAMI, CHEESE,
     
     FISHBONE, SPONGE, GLOVE
 }

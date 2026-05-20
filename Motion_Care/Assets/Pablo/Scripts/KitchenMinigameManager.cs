@@ -89,7 +89,7 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
     {
         itemNames = new Dictionary<ItemCategory, string>();
         itemNames[ItemCategory.BREAD] = "Pan";
-        itemNames[ItemCategory.HAM] = "Jamón";
+        itemNames[ItemCategory.SALAMI] = "Salami";
         itemNames[ItemCategory.CHEESE] = "Queso";
         itemNames[ItemCategory.LETTUCE] = "Lechuga";
         itemNames[ItemCategory.TOMATO] = "Tomate";
