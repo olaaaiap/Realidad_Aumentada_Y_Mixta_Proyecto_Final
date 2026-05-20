@@ -19,6 +19,11 @@ public class ParejasCartasManager : MonoBehaviour
     private int parejasHechas = 0;
     private int totalParejas;
 
+    private int correcto = 0;
+    private int incorrecto = 0;
+
+
+
     void Start()
     {
         totalParejas = cartas.Length / 2;
@@ -58,7 +63,7 @@ public class ParejasCartasManager : MonoBehaviour
 
         OnPruebaFinalizada?.Invoke();
 
-        DataManager.instance.SaveMemoryMetric("memory", TaskType.memory, 67, 67);
+        DataManager.instance.SaveMemoryMetric("memory", TaskType.memory, correcto, incorrecto);
         DataManager.instance.EndSession();
 
     }
@@ -106,6 +111,7 @@ public class ParejasCartasManager : MonoBehaviour
             segundaCarta.GetComponent<FadeEffect2>().Disappear();
 
             parejasHechas++;
+            correcto++;
 
             if (parejasHechas >= totalParejas)
                 pruebaTerminada = true;
@@ -117,6 +123,7 @@ public class ParejasCartasManager : MonoBehaviour
             primeraCarta.GetComponent<TurnEffect>().Girar();
             segundaCarta.GetComponent<TurnEffect>().Girar();
             yield return new WaitForSeconds(1.5f);
+            incorrecto++;
         }
 
         primeraCarta = null;
@@ -130,3 +137,4 @@ public class ParejasCartasManager : MonoBehaviour
         return baseA == baseB;
     }
 }
+
