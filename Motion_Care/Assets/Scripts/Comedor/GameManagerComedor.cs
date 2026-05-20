@@ -205,23 +205,22 @@ public class GameManagerComedor : MonoBehaviour
                         Debug.LogError("ChronometerManager no encontrado!");
                     }
                     break;
-                case 4:
+                //case 4:
 
                     
-
-                    if (DataManager.instance)
-                    {
-                        DataManager.instance.SavePouringMetric("pouring", TaskType.pouring, 47);
-                        DataManager.instance.EndSession();
-                    }
-                    else
-                    {
-                        Debug.LogError("DataManager no encontrado!");
-                    }
+                //    if (DataManager.instance)
+                //    {
+                //        DataManager.instance.SavePouringMetric("pouring", TaskType.pouring, 47);
+                //        DataManager.instance.EndSession();
+                //    }
+                //    else
+                //    {
+                //        Debug.LogError("DataManager no encontrado!");
+                //    }
                     
 
-                    FindFirstObjectByType<GeneralGameManager>().NextGame();
-                    break;
+                //    FindFirstObjectByType<GeneralGameManager>().NextGame();
+                //    break;
             }
         }
     }
