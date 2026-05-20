@@ -29,6 +29,7 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
     [SerializeField] private List<int> nRoundItems;
     [SerializeField] private int playDelay;
     [SerializeField] private Difficulty startDifficulty;
+    [SerializeField] private int timeToPass;
     [SerializeField] private List<Transform> easySpawnPoints;
     [SerializeField] private List<Transform> mediumSpawnPoints;
     [SerializeField] private List<Transform> hardSpawnPoints;
@@ -61,9 +62,9 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
 
     // Metrics
     private ComparisonResult _results;
-    private float _levelTime;
-    private float _roundStartTime;
-    private float _roundEndTime;
+    private int _levelTime;
+    private int _roundStartTime;
+    private int _roundEndTime;
     
     // Auxilary variables
     private Random _random = new Random();
@@ -176,14 +177,14 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
                 break;
         }
         
-        _roundStartTime = Time.time;
+        ChronometerManager.instance.StartTimer();
     }
 
     // Method to be called when the user wants to lock in the final sandwich
     public void CheckRecipe()
     {
-        _roundEndTime = Time.time;
-        _results.SetTime(_roundEndTime - _roundStartTime);
+        _results.SetTime(ChronometerManager.instance.StopTimer());
+        Debug.Log($"Time: {_results.GetTime()}");
         
         _hasStarted = false;
         _hasChecked = true;
@@ -236,7 +237,7 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
     // Method to check if the difficulty should be increased for the next round
     private void CheckDifficultyProgression()
     {
-        if (_results.GetCorrect() == _recipe.Count && _results.GetTime() <= 60.0f)
+        if (_results.GetCorrect() == _recipe.Count && _results.GetTime() <= timeToPass)
         {
             switch (_currentDifficulty)
             {
