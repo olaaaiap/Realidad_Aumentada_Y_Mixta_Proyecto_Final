@@ -16,7 +16,7 @@ public enum ItemType
 
 public enum ItemCategory
 {
-    PLATE, BREAD, TOMATO, LETTUCE, HAM, CHEESE,
+    PLATE, BREAD, TOMATO, LETTUCE, SALAMI, CHEESE,
     
     FISHBONE, SPONGE, GLOVE
 }
@@ -46,6 +46,22 @@ public class ItemController : MonoBehaviour
         _hasSnapped = false;
     }
 
+    private void Start()
+    {
+        if (type != ItemType.PLATE)
+        {
+            KitchenMinigameManager.instance.SubscribeToRecipeCheck(OnCheckRecipe);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (type != ItemType.PLATE)
+        {
+            KitchenMinigameManager.instance.UnsubscribeToRecipeCheck(OnCheckRecipe);
+        }
+    }
+
     private void Update()
     {
         if (snapInteractable.InteractorViews.Any() && !_hasSnapped)
@@ -56,7 +72,7 @@ public class ItemController : MonoBehaviour
             ItemController item = view.transform.GetComponentInParent<ItemController>();
             SandwichManager.instance.AddItem(item);
             
-            SandwichManager.instance.ShowSandwich();
+            // SandwichManager.instance.ShowSandwich();
         } 
         else if (!snapInteractable.InteractorViews.Any() && _hasSnapped)
         {
@@ -65,7 +81,7 @@ public class ItemController : MonoBehaviour
             // Being a stack, we can only remove the last item added, which is the one being removed from the socket
             SandwichManager.instance.RemoveItem();
             
-            SandwichManager.instance.ShowSandwich();
+            // SandwichManager.instance.ShowSandwich();
         }
     }
 
@@ -77,5 +93,10 @@ public class ItemController : MonoBehaviour
     public ItemType GetItemType()
     {
         return this.type;
+    }
+    
+    private void OnCheckRecipe(ComparisonResult results)
+    {
+        Destroy(this.gameObject);
     }
 }

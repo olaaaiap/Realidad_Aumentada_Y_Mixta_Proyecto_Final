@@ -8,7 +8,12 @@ public class RecipeCheckSocketController : MonoBehaviour
 {
     // VARIABLES //
 
+    [Header("Snap Interactable")]
     [SerializeField] private SnapInteractable snapInteractable;
+    
+    [Header("SFX")]
+    [SerializeField] private int audioSourceIndex;
+    [SerializeField] private string clipName;
 
 
     // METHODS && FUNCTIONS //
@@ -25,6 +30,7 @@ public class RecipeCheckSocketController : MonoBehaviour
     {
         if (snapInteractable.InteractorViews.Any() && !KitchenMinigameManager.instance.HasChecked())
         {
+            MinigameAudioManager.instance.PlaySpatialClip(clipName, audioSourceIndex);
             KitchenMinigameManager.instance.CheckRecipe();
         }
     }
