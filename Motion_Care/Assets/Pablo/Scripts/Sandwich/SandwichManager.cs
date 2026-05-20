@@ -2,44 +2,33 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SandwichManager : MonoBehaviour
+public class SandwichManager : Singleton<SandwichManager>
 {
     // VARIABLES //
-
-    public static SandwichManager instance;
     
-    private Stack<ItemController> _sandwich;
+    private List<ItemController> _sandwich;
     
     
     // METHODS && FUNCTIONS //
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
-        _sandwich = new Stack<ItemController>();
+        _sandwich = new List<ItemController>();
     }
 
-    public Stack<ItemController> GetSandWich()
+    public List<ItemController> GetSandWich()
     {
         return this._sandwich;
     }
 
     public void AddItem(ItemController item)
     {
-        _sandwich.Push(item);
+        _sandwich.Add(item);
     }
 
     public void RemoveItem()
     {
-        _sandwich.Pop();
+        _sandwich.RemoveAt(_sandwich.Count - 1);
     }
 
     public void EmptySandwich()
