@@ -11430,7 +11430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2028393147299633185, guid: e00c00b67c42ee946aaa1ab537aa4ecc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0835
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 2028393147299633185, guid: e00c00b67c42ee946aaa1ab537aa4ecc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11871,7 +11871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7824546645231341688, guid: c3c06cdc241189e4a8e3b4418e1230ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0409
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7824546645231341688, guid: c3c06cdc241189e4a8e3b4418e1230ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12812,6 +12812,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookBoxDetector
   appleToActivateDestiny: {fileID: 8918509767130855517}
+  books:
+  - {fileID: 6953343715701252271}
+  - {fileID: 4618049596183287864}
+  - {fileID: 8942593479615393224}
+  - {fileID: 5983122710999643198}
 --- !u!114 &6378166343029093372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13020,7 +13025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3767775645563742879, guid: 9286a2c8f2a43d747a0fdcfa8f67fba8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.128
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3767775645563742879, guid: 9286a2c8f2a43d747a0fdcfa8f67fba8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14749,7 +14754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8461619469853284513, guid: 91ed0aff68e1b1c449fab9414a593dbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0557
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8461619469853284513, guid: 91ed0aff68e1b1c449fab9414a593dbf, type: 3}
       propertyPath: m_LocalPosition.z

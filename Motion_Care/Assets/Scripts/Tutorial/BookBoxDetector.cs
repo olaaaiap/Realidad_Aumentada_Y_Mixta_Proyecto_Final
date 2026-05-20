@@ -1,5 +1,7 @@
 using DG.Tweening;
 using Oculus.Interaction;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BookBoxDetector : MonoBehaviour
@@ -7,6 +9,20 @@ public class BookBoxDetector : MonoBehaviour
     private int count;
 
     [SerializeField] private Transform appleToActivateDestiny;
+    [SerializeField] private List<Rigidbody> books;
+
+    private void Awake()
+    {
+        foreach (var book in books) book.isKinematic = true;
+        StartCoroutine(EnableRBs());
+    }
+
+    private IEnumerator EnableRBs()
+    {
+        yield return new WaitForSeconds(2f);
+        foreach (var book in books) book.isKinematic = false;
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
