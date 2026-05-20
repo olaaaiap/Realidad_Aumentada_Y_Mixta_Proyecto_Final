@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class SimonDiceManager : MonoBehaviour
 {
@@ -22,13 +20,20 @@ public class SimonDiceManager : MonoBehaviour
     private bool pruebaActiva = false;
     private System.Func<IEnumerator> secuenciaActual;
 
+    private int correcto = 0;
+    private int incorrecto = 0;
+    private int total = 0;
+
     void Start()
     {
         originalPositions = new Vector3[gameObjects.Length];
         FixAppearAnimation();
         StartCoroutine(FlujoSimonDice());
 
+        Debug.Log("ANTES DE START SESSION");
         DataManager.instance.StartSession();
+        Debug.Log("DESPUÉS DE START SESSION");
+
         ChronometerManager.instance.StartTimer();
     }
 
@@ -39,16 +44,13 @@ public class SimonDiceManager : MonoBehaviour
         {
             GameObject obj = gameObjects[i];
 
-            // Guardar posición original de cada objeto
             originalPositions[i] = obj.transform.position;
 
-            obj.GetComponent<Rigidbody>().useGravity=false;
+            obj.GetComponent<Rigidbody>().useGravity = false;
             obj.GetComponent<Rigidbody>().isKinematic = true;
 
-            // Mover al punto oculto
             obj.transform.position = hiddenPoint.position;
 
-            // Activar para que Meta registre bien la escala
             obj.SetActive(true);
         }
     }
@@ -58,29 +60,35 @@ public class SimonDiceManager : MonoBehaviour
         {
             int index = (int)type;
 
-            gameObjects[index].transform.position = originalPositions[index];
-            gameObjects[index].GetComponent<Rigidbody>().useGravity = true;
-            gameObjects[index].GetComponent<Rigidbody>().isKinematic = false;
+            GameObject obj = gameObjects[index];
+
+            obj.transform.position = originalPositions[index];
+            obj.GetComponent<Rigidbody>().useGravity = true;
+            obj.GetComponent<Rigidbody>().isKinematic = false;
+
+            // Guardar posición correcta aquí
+            obj.GetComponent<ReinicioCaidaManager>().GuardarPosicionForzada();
         }
     }
+
 
 
     private IEnumerator FlujoSimonDice()
     {
         yield return StartCoroutine(Introduccion());
         yield return StartCoroutine(Prueba1());
-
-        DataManager.instance.SaveSequenceMetric("secuencia1", TaskType.sequence, 67, 67, 67);
+        total = correcto + incorrecto;
+        DataManager.instance.SaveSequenceMetric("secuencia1", TaskType.sequence, correcto, incorrecto, total);
         ChronometerManager.instance.StartTimer();
 
         yield return StartCoroutine(Prueba2());
-
-        DataManager.instance.SaveSequenceMetric("secuencia2", TaskType.sequence, 67, 67, 67);
+        total = correcto + incorrecto;
+        DataManager.instance.SaveSequenceMetric("secuencia2", TaskType.sequence, correcto, incorrecto, total);
         ChronometerManager.instance.StartTimer();
 
         yield return StartCoroutine(Prueba3());
-
-        DataManager.instance.SaveSequenceMetric("secuencia3", TaskType.sequence, 67, 67, 67);
+        total = correcto + incorrecto;
+        DataManager.instance.SaveSequenceMetric("secuencia3", TaskType.sequence, correcto, incorrecto, total);
 
         yield return StartCoroutine(FinalPrueba());
     }
@@ -107,6 +115,9 @@ public class SimonDiceManager : MonoBehaviour
 
     private IEnumerator Prueba1()
     {
+        correcto = 0;
+        incorrecto = 0;
+
         secuencia = new List<SimonDiceType>()
         {
             SimonDiceType.Book1,
@@ -158,6 +169,9 @@ public class SimonDiceManager : MonoBehaviour
 
     private IEnumerator Prueba2()
     {
+        correcto = 0;
+        incorrecto = 0;
+
         yield return new WaitForSeconds(2.0f);
 
         secuencia = new List<SimonDiceType>()
@@ -220,6 +234,9 @@ public class SimonDiceManager : MonoBehaviour
 
     private IEnumerator Prueba3()
     {
+        correcto = 0;
+        incorrecto = 0;
+
         yield return new WaitForSeconds(2.0f);
 
         secuencia = new List<SimonDiceType>()
@@ -285,6 +302,7 @@ public class SimonDiceManager : MonoBehaviour
         if (secuencia[indice] != type)
         {
             fallos++;
+            incorrecto++;
 
             audioManager.ReproducirAudio(audioClips[(int)SimonDiceAudioClipsType.Error]);
             while (audioManager.EstaReproduciendo())
@@ -305,6 +323,7 @@ public class SimonDiceManager : MonoBehaviour
         }
 
         indice++;
+        correcto++;
 
         if (indice >= secuencia.Count)
         {

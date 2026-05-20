@@ -323,7 +323,7 @@ Transform:
   m_GameObject: {fileID: 6915725756004982099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.42110878, y: 0.376, z: -0.06983262}
+  m_LocalPosition: {x: -0.42110878, y: 0.011, z: -0.06983262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -362,8 +362,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7667300169999784952}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.42110878, y: 0.3775, z: -0.06983262}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.421, y: 0.011, z: -0.034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -378,7 +378,7 @@ Transform:
   - {fileID: 1392202843968593630}
   - {fileID: 4516026412944361435}
   m_Father: {fileID: 8014079560217775279}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &7689547475381830618
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,9 +448,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5076690595334693978}
     m_Modifications:
+    - target: {fileID: 38893353440139984, guid: a1497eb293657d647af97991fc844a5e, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f65914ec7dc0f1b428a9d3cec054d8df, type: 2}
     - target: {fileID: 1207247893903417791, guid: a1497eb293657d647af97991fc844a5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.158
+      value: -0.008
       objectReference: {fileID: 0}
     - target: {fileID: 1207247893903417791, guid: a1497eb293657d647af97991fc844a5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -492,6 +496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carta_rocio_jurado
       objectReference: {fileID: 0}
+    - target: {fileID: 1984628644479499013, guid: a1497eb293657d647af97991fc844a5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7315687969973827890, guid: a1497eb293657d647af97991fc844a5e, type: 3}
       propertyPath: manager
       value: 
@@ -521,15 +529,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.357
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0019999743
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.35899985
+      value: -0.511
       objectReference: {fileID: 0}
     - target: {fileID: 330492731602735062, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -562,6 +570,10 @@ PrefabInstance:
     - target: {fileID: 1143340153968252268, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: m_Name
       value: Carta_raffaella_carra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143340153968252268, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8428612984107586086, guid: ea016184e08efb546ae57434a9d7d92e, type: 3}
       propertyPath: manager
@@ -596,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 2236042785842768185}
     - target: {fileID: 4831044806602528195, guid: 87042f150cc55bd408b332b816dc1fea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.189
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 4831044806602528195, guid: 87042f150cc55bd408b332b816dc1fea, type: 3}
       propertyPath: m_LocalPosition.y
@@ -638,6 +650,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carta_julio_iglesias_2
       objectReference: {fileID: 0}
+    - target: {fileID: 5206303054780583801, guid: 87042f150cc55bd408b332b816dc1fea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998932672965373612, guid: 87042f150cc55bd408b332b816dc1fea, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aa6a434345618c3499e117549b65057d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -712,7 +732,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5026206534487593101, guid: 850e6db3abefeae479a23d65547bb744, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 973307614066905555}
   m_SourcePrefab: {fileID: 100100000, guid: 850e6db3abefeae479a23d65547bb744, type: 3}
 --- !u!4 &6061300275284687165 stripped
 Transform:
@@ -724,6 +747,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5026206534487593101, guid: 850e6db3abefeae479a23d65547bb744, type: 3}
   m_PrefabInstance: {fileID: 1915556953426440970}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &973307614066905555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6869608810032554887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!1001 &4068757138967819641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 2236042785842768185}
     - target: {fileID: 2367473654678823414, guid: c998ac5c65687d743920900aca69261a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.29
+      value: -0.158
       objectReference: {fileID: 0}
     - target: {fileID: 2367473654678823414, guid: c998ac5c65687d743920900aca69261a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -746,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367473654678823414, guid: c998ac5c65687d743920900aca69261a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.35399985
+      value: -0.34599984
       objectReference: {fileID: 0}
     - target: {fileID: 2367473654678823414, guid: c998ac5c65687d743920900aca69261a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -780,6 +815,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carta_ana_torroja_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3139330076064774988, guid: c998ac5c65687d743920900aca69261a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499816302844172953, guid: c998ac5c65687d743920900aca69261a, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e320f016b66cb10429137eac0be60f60, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -807,17 +850,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carta_miguel_bose
       objectReference: {fileID: 0}
+    - target: {fileID: 2859789893294732389, guid: 04fc2702006f61841a85317643176e79, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3241416822073192159, guid: 04fc2702006f61841a85317643176e79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000109910965
+      value: -0.325
       objectReference: {fileID: 0}
     - target: {fileID: 3241416822073192159, guid: 04fc2702006f61841a85317643176e79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0019999743
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 3241416822073192159, guid: 04fc2702006f61841a85317643176e79, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5229998
+      value: -0.344
       objectReference: {fileID: 0}
     - target: {fileID: 3241416822073192159, guid: 04fc2702006f61841a85317643176e79, type: 3}
       propertyPath: m_LocalRotation.w
@@ -925,13 +972,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2874803351628251934, guid: 3756c03a9b46c2d47bd820741534ab16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1004185257813223372}
   m_SourcePrefab: {fileID: 100100000, guid: 3756c03a9b46c2d47bd820741534ab16, type: 3}
 --- !u!1 &7258722363679707390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2874803351628251934, guid: 3756c03a9b46c2d47bd820741534ab16, type: 3}
   m_PrefabInstance: {fileID: 4853037491033707488}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1004185257813223372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258722363679707390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!4 &8068191192902289988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219663367267932580, guid: 3756c03a9b46c2d47bd820741534ab16, type: 3}
@@ -949,21 +1011,29 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 2236042785842768185}
+    - target: {fileID: 7633538081802134471, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a07f720566cec9499351d3b668ec14f, type: 2}
     - target: {fileID: 8281902014780408338, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
       propertyPath: m_Name
       value: Carta_miguel_bose_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8281902014780408338, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8765388800787765416, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.156
+      value: 0.369
       objectReference: {fileID: 0}
     - target: {fileID: 8765388800787765416, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0019999743
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 8765388800787765416, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5289998
+      value: -0.513
       objectReference: {fileID: 0}
     - target: {fileID: 8765388800787765416, guid: f80c4d98a3b727a46bd3b8ef6ade41ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1022,15 +1092,15 @@ PrefabInstance:
       objectReference: {fileID: 2236042785842768185}
     - target: {fileID: 3974579239724914996, guid: 3af7328f4bd5aea4782b9e6ee2c5a9ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.273
+      value: 0.185
       objectReference: {fileID: 0}
     - target: {fileID: 3974579239724914996, guid: 3af7328f4bd5aea4782b9e6ee2c5a9ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0019
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 3974579239724914996, guid: 3af7328f4bd5aea4782b9e6ee2c5a9ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.522
+      value: -0.344
       objectReference: {fileID: 0}
     - target: {fileID: 3974579239724914996, guid: 3af7328f4bd5aea4782b9e6ee2c5a9ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1063,6 +1133,10 @@ PrefabInstance:
     - target: {fileID: 4351421094431966094, guid: 3af7328f4bd5aea4782b9e6ee2c5a9ad, type: 3}
       propertyPath: m_Name
       value: Carta_ana_torroja
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351421094431966094, guid: 3af7328f4bd5aea4782b9e6ee2c5a9ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1138,13 +1212,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2874803351628251934, guid: 203bdf1a8c2f8654fb3732bfa6eeeb91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5747999052406952946}
   m_SourcePrefab: {fileID: 100100000, guid: 203bdf1a8c2f8654fb3732bfa6eeeb91, type: 3}
 --- !u!1 &8346453821522567472 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2874803351628251934, guid: 203bdf1a8c2f8654fb3732bfa6eeeb91, type: 3}
   m_PrefabInstance: {fileID: 6066865390198874670}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5747999052406952946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346453821522567472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!4 &8691770447974218634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219663367267932580, guid: 203bdf1a8c2f8654fb3732bfa6eeeb91, type: 3}
@@ -1209,7 +1298,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2874803351628251934, guid: 739857d59ed737e4b9b391a502c8b2f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6442831785532219385}
   m_SourcePrefab: {fileID: 100100000, guid: 739857d59ed737e4b9b391a502c8b2f8, type: 3}
 --- !u!4 &8135873002843905786 stripped
 Transform:
@@ -1221,6 +1313,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2874803351628251934, guid: 739857d59ed737e4b9b391a502c8b2f8, type: 3}
   m_PrefabInstance: {fileID: 6649256599311632222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6442831785532219385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8909173186411873344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!1001 &6966718532318934202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1280,7 +1384,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 770613944858181270, guid: c5f0589c79531014ca2bc1839a8c9101, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 475123278323152169}
   m_SourcePrefab: {fileID: 100100000, guid: c5f0589c79531014ca2bc1839a8c9101, type: 3}
 --- !u!4 &7013464133086187670 stripped
 Transform:
@@ -1292,6 +1399,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 770613944858181270, guid: c5f0589c79531014ca2bc1839a8c9101, type: 3}
   m_PrefabInstance: {fileID: 6966718532318934202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &475123278323152169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646836004153444908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!1001 &7037541654181833251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1306,15 +1425,15 @@ PrefabInstance:
       objectReference: {fileID: 2236042785842768185}
     - target: {fileID: 7457422049401681241, guid: edcfd9a0310a571438324a105e0fd886, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.359
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 7457422049401681241, guid: edcfd9a0310a571438324a105e0fd886, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0019999743
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 7457422049401681241, guid: edcfd9a0310a571438324a105e0fd886, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.50699985
+      value: -0.516
       objectReference: {fileID: 0}
     - target: {fileID: 7457422049401681241, guid: edcfd9a0310a571438324a105e0fd886, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1348,6 +1467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carta_julio_iglesias
       objectReference: {fileID: 0}
+    - target: {fileID: 7797355463417327587, guid: edcfd9a0310a571438324a105e0fd886, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1373,15 +1496,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0314274
+      value: -1.505
       objectReference: {fileID: 0}
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.512
+      value: 0.764
       objectReference: {fileID: 0}
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.747409
+      value: -4.476
       objectReference: {fileID: 0}
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1415,13 +1538,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SalaEstar Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5201776870126828047, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5893101819584061275, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6310765980045830374, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.366
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1510,7 +1637,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7400633348574073159, guid: cb81b24c0a1378644b76d1022e6be742, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7281064308135607158}
   m_SourcePrefab: {fileID: 100100000, guid: cb81b24c0a1378644b76d1022e6be742, type: 3}
 --- !u!4 &342488383255099247 stripped
 Transform:
@@ -1522,6 +1652,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7400633348574073159, guid: cb81b24c0a1378644b76d1022e6be742, type: 3}
   m_PrefabInstance: {fileID: 7583858516713323666}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7281064308135607158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120010863192731093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!1001 &8083502975785916597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1581,13 +1723,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2874803351628251934, guid: 0f163edb4e88b0d4ca18a03fd48cae54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5148610822215178146}
   m_SourcePrefab: {fileID: 100100000, guid: 0f163edb4e88b0d4ca18a03fd48cae54, type: 3}
 --- !u!1 &6326155918709873579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2874803351628251934, guid: 0f163edb4e88b0d4ca18a03fd48cae54, type: 3}
   m_PrefabInstance: {fileID: 8083502975785916597}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5148610822215178146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326155918709873579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
 --- !u!4 &6665562636402262289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219663367267932580, guid: 0f163edb4e88b0d4ca18a03fd48cae54, type: 3}
@@ -1605,9 +1762,13 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 2236042785842768185}
+    - target: {fileID: 6977029477591050058, guid: 095c7b47473851347a919fe190c34abe, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: afbf12a4095d76d41a05501047adbaca, type: 2}
     - target: {fileID: 8113322159799114789, guid: 095c7b47473851347a919fe190c34abe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.192
+      value: 0.367
       objectReference: {fileID: 0}
     - target: {fileID: 8113322159799114789, guid: 095c7b47473851347a919fe190c34abe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1615,7 +1776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8113322159799114789, guid: 095c7b47473851347a919fe190c34abe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.35299984
+      value: -0.34599984
       objectReference: {fileID: 0}
     - target: {fileID: 8113322159799114789, guid: 095c7b47473851347a919fe190c34abe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1649,6 +1810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carta_raffaella_carra_2
       objectReference: {fileID: 0}
+    - target: {fileID: 8922650281864447647, guid: 095c7b47473851347a919fe190c34abe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1678,15 +1843,15 @@ PrefabInstance:
       objectReference: {fileID: 2236042785842768185}
     - target: {fileID: 5135643011902333250, guid: ab864dd9d096181498cad813ced7af2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000109910965
+      value: -0.159
       objectReference: {fileID: 0}
     - target: {fileID: 5135643011902333250, guid: ab864dd9d096181498cad813ced7af2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0019999743
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 5135643011902333250, guid: ab864dd9d096181498cad813ced7af2c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3599995
+      value: -0.511
       objectReference: {fileID: 0}
     - target: {fileID: 5135643011902333250, guid: ab864dd9d096181498cad813ced7af2c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1719,6 +1884,10 @@ PrefabInstance:
     - target: {fileID: 5480503272891988984, guid: ab864dd9d096181498cad813ced7af2c, type: 3}
       propertyPath: m_Name
       value: Carta_rocio_jurado_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480503272891988984, guid: ab864dd9d096181498cad813ced7af2c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1794,7 +1963,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 322613692346384287, guid: 90e1033d9ec0dd742bd508ec2968a738, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8708401296509245400}
   m_SourcePrefab: {fileID: 100100000, guid: 90e1033d9ec0dd742bd508ec2968a738, type: 3}
 --- !u!4 &8432544788713121326 stripped
 Transform:
@@ -1806,3 +1978,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 322613692346384287, guid: 90e1033d9ec0dd742bd508ec2968a738, type: 3}
   m_PrefabInstance: {fileID: 8806680305346462475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8708401296509245400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101135353420545172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
