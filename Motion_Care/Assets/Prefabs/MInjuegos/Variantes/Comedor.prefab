@@ -5081,6 +5081,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6155155075057163120}
     m_Modifications:
+    - target: {fileID: 3641554113759799601, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641554113759799601, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641554113759799601, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641554113759799601, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641554113759799601, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968344372347155384, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968344372347155384, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968344372347155384, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245854154921707577, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.906
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245854154921707577, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245854154921707577, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245854154921707577, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245854154921707577, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245854154921707577, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5101976534901111541, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
       propertyPath: m_Name
       value: Botella

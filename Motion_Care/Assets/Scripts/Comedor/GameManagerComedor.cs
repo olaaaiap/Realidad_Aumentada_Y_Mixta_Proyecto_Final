@@ -35,8 +35,23 @@ public class GameManagerComedor : MonoBehaviour
             presentationAS.Play();
         }
 
-        DataManager.instance.StartSession();
-        ChronometerManager.instance.StartTimer();
+        if (DataManager.instance)
+        {
+            DataManager.instance.StartSession();
+        }
+        else
+        {
+            Debug.LogError("DataManager no encontrado!");
+        }
+
+        if (ChronometerManager.instance)
+        {
+            ChronometerManager.instance.StartTimer();
+        }
+        else
+        {
+            Debug.LogError("ChronometerManager no encontrado!");
+        }
 
     }
 
@@ -62,8 +77,24 @@ public class GameManagerComedor : MonoBehaviour
                     dificultadMedia.SetActive(true);
 
                     Deviation deviation = new Deviation(47, 47);
-                    DataManager.instance.SaveMovementMetric("cubiertoFacil", TaskType.memory, deviation);
-                    ChronometerManager.instance.StartTimer();
+                   
+                    if (DataManager.instance)
+                    {
+                        DataManager.instance.SaveMovementMetric("cubiertoFacil", TaskType.memory, deviation);
+                    }
+                    else
+                    {
+                        Debug.LogError("DataManager no encontrado!");
+                    }
+
+                    if (ChronometerManager.instance)
+                    {
+                        ChronometerManager.instance.StartTimer();
+                    }
+                    else
+                    {
+                        Debug.LogError("ChronometerManager no encontrado!");
+                    }
 
                     break;
                 case 2:
@@ -78,8 +109,26 @@ public class GameManagerComedor : MonoBehaviour
                     dificultadDificil.SetActive(true);
 
                     Deviation deviation2 = new Deviation(47, 47);
-                    DataManager.instance.SaveMovementMetric("cubiertoMedio", TaskType.memory, deviation2);
-                    ChronometerManager.instance.StartTimer();
+                    
+                    if (DataManager.instance)
+                    {
+                        DataManager.instance.SaveMovementMetric("cubiertoMedio", TaskType.memory, deviation2);
+                    }
+                    else
+                    {
+                        Debug.LogError("DataManager no encontrado!");
+                    }
+
+                    if (ChronometerManager.instance)
+                    {
+                        ChronometerManager.instance.StartTimer();
+                    }
+                    else
+                    {
+                        Debug.LogError("ChronometerManager no encontrado!");
+                    }
+
+                    
 
                     break;
                 case 3:
@@ -89,14 +138,38 @@ public class GameManagerComedor : MonoBehaviour
                     botella.SetActive(true);
 
                     Deviation deviation3 = new Deviation(47, 47);
-                    DataManager.instance.SaveMovementMetric("cubiertoDificil", TaskType.memory, deviation3);
-                    ChronometerManager.instance.StartTimer();
+                    if (DataManager.instance)
+                    {
+                        DataManager.instance.SaveMovementMetric("cubiertoDificil", TaskType.memory, deviation3);
+                    }
+                    else
+                    {
+                        Debug.LogError("DataManager no encontrado!");
+                    }
 
+                    if (ChronometerManager.instance)
+                    {
+                        ChronometerManager.instance.StartTimer();
+                    }
+                    else
+                    {
+                        Debug.LogError("ChronometerManager no encontrado!");
+                    }
                     break;
                 case 4:
 
-                    DataManager.instance.SavePouringMetric("pouring", TaskType.pouring, 47);
-                    DataManager.instance.EndSession();
+                    
+
+                    if (DataManager.instance)
+                    {
+                        DataManager.instance.SavePouringMetric("pouring", TaskType.pouring, 47);
+                        DataManager.instance.EndSession();
+                    }
+                    else
+                    {
+                        Debug.LogError("DataManager no encontrado!");
+                    }
+                    
 
                     FindFirstObjectByType<GeneralGameManager>().NextGame();
                     break;
