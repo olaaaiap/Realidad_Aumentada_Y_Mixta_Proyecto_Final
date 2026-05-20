@@ -11,6 +11,7 @@ public class TutorialHandler : MonoBehaviour
     private int current = -1;
     [SerializeField] private List<GameObject> steps;
 
+    
     private void Start()
     {
         Next();
@@ -41,10 +42,11 @@ public class TutorialHandler : MonoBehaviour
             });
 
         }
+        AudioSource audio = GetComponent<AudioSource>();
 
-        if(current != -1) GetComponent<AudioSource>().Play(); 
-
-        if(current<2)
+        if (current != -1) audio.Play();
+        
+        if (current<2)
         current++;
 
         yield return new WaitForSeconds(2f);

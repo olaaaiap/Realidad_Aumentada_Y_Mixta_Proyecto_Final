@@ -52,7 +52,7 @@ public class ComparisonResult
     {
         _totalWrong = _nWrong + _over + _under;
         
-        // TODO: Llamada a JSON
+        DataManager.instance.SaveMemoryMetric($"ronda_{KitchenMinigameManager.instance.GetCurrentRound()}", TaskType.memory, _nCorrect, _nWrong);
     }
     
     public int ComputeScore(int correctPoints = 10, int wrongPoints = -5, int overPoints = -3, int underPoints = -3)

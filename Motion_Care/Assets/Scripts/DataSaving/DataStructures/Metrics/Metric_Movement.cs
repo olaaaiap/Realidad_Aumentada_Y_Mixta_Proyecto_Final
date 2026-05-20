@@ -28,6 +28,11 @@ public class Deviation
     //{
     //    return $"Mean: {mean}, Max: {max}, Std Dev: {std_dev}";
     //}
+
+    public override string ToString()
+    {
+        return $"Media: {mean}, Max: {max}";
+    }
 }
 
 [System.Serializable]
