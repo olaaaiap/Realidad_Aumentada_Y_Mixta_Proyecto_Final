@@ -48,6 +48,7 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
     [Header("Audio")]
     [SerializeField] private string introClipName;
     [SerializeField] private string nextRoundClipName;
+    [SerializeField] private string endGameClipName;
     
     // Sandwich characteristics
     public Dictionary<ItemCategory, string> itemNames;
@@ -257,12 +258,22 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
         if (_currentRound == nRounds)
         {
             _hasEnded = true;
-            // TODO: Play end game and change scene (call to EndGame() coroutine)
+            StartCoroutine(EndGame());
         }
         else
         {
             MinigameAudioManager.instance.PlayClip(nextRoundClipName);
         }
+    }
+
+    private IEnumerator EndGame()
+    {
+        MinigameAudioManager.instance.StopAudio();
+        MinigameAudioManager.instance.PlayClip(endGameClipName);
+        
+        yield return new WaitForSeconds(MinigameAudioManager.instance.GetClipLength(endGameClipName));
+        
+        // TODO: Call to end minigame on the general manager
     }
 
     // Methods to subscribe/unsubscribe to the events 

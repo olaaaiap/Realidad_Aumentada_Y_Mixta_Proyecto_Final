@@ -7,8 +7,9 @@ public class MinigameAudioManager : Singleton<MinigameAudioManager>
 {
     // VARIABLES //
     
-    [Header("Source")]
-    [SerializeField] private AudioSource source;
+    [Header("Sources")]
+    [SerializeField] private AudioSource mainSource;
+    [SerializeField] private List<AudioSource> spatialAudioSources;
     
     [Header("Clips")]
     [SerializeField] private List<AudioClip> clips;
@@ -20,7 +21,7 @@ public class MinigameAudioManager : Singleton<MinigameAudioManager>
 
     private void Awake()
     {
-        source ??= GetComponent<AudioSource>();
+        mainSource ??= GetComponent<AudioSource>();
         
         _stringToClip = new Dictionary<string, AudioClip>();
 
@@ -32,11 +33,21 @@ public class MinigameAudioManager : Singleton<MinigameAudioManager>
 
     public void PlayClip(string clipName)
     {
-        source.PlayOneShot(_stringToClip[clipName]);
+        mainSource.PlayOneShot(_stringToClip[clipName]);
     }
 
     public void StopAudio()
     {
-        source.Stop();
+        mainSource.Stop();
+    }
+    
+    public void PlaySpatialClip(string clipName, int spatialSourceIndex)
+    {
+        spatialAudioSources[spatialSourceIndex].PlayOneShot(_stringToClip[clipName]);
+    }
+    
+    public float GetClipLength(string clipName)
+    {
+        return _stringToClip[clipName].length;
     }
 }
