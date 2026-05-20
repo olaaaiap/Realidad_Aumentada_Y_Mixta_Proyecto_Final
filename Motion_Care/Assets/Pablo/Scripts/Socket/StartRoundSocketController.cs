@@ -3,7 +3,7 @@ using Oculus.Interaction;
 using UnityEngine;
 
 [RequireComponent(typeof(SnapInteractable))]
-public class StartLevelSocketController : MonoBehaviour
+public class StartRoundSocketController : MonoBehaviour
 {
     // VARIABLES //
 
@@ -22,7 +22,7 @@ public class StartLevelSocketController : MonoBehaviour
 
     private void Update()
     {
-        if (snapInteractable.InteractorViews.Any() && !KitchenMinigameManager.instance.HasStarted())
+        if (snapInteractable.InteractorViews.Any() && !KitchenMinigameManager.instance.HasStarted() && !KitchenMinigameManager.instance.HasEnded())
         {
             KitchenMinigameManager.instance.StartRoundCoroutine();
         }

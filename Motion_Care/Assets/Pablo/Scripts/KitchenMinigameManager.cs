@@ -55,6 +55,7 @@ public class KitchenMinigameManager : MonoBehaviour
     private UnityEvent<ComparisonResult> _checkRecipeEvent;
     private bool _hasStarted;
     private bool _hasChecked;
+    private bool _hasEnded;
 
     // Metrics
     private ComparisonResult _results;
@@ -69,6 +70,9 @@ public class KitchenMinigameManager : MonoBehaviour
     // GETTERS && SETTERS //
     public bool HasStarted() { return _hasStarted; }
     public bool HasChecked() { return _hasChecked; }
+    public bool HasEnded() { return _hasEnded; }
+    public int GetCurrentRound() { return _currentRound; }
+    public Difficulty GetCurrentDifficulty() { return _currentDifficulty; }
     public List<ItemCategory> GetRecipe() { return _recipe; }
     public ComparisonResult GetResults() { return _results; }
     public int GetCorrectPoints() { return correctPoints; }
@@ -105,9 +109,15 @@ public class KitchenMinigameManager : MonoBehaviour
 
         _hasStarted = false;
         _hasChecked = false;
+        _hasEnded = false;
         
         _currentDifficulty = startDifficulty;
         _currentRound = 0;
+    }
+
+    private void Start()
+    {
+        // TODO: Play intro and wait for player input to start the game
     }
     
     // Function that initializes each round
@@ -138,8 +148,10 @@ public class KitchenMinigameManager : MonoBehaviour
         }
     }
     
+    // Functions to start the round
     public void StartRoundCoroutine()
     {
+        // TODO: Stop Audio
         StartCoroutine(RoundCoroutine());
     }
 
@@ -221,6 +233,12 @@ public class KitchenMinigameManager : MonoBehaviour
         _results.SaveResultData();
         
         _checkRecipeEvent?.Invoke(_results);
+
+        if (_currentRound == nRounds)
+        {
+            _hasEnded = true;
+            // TODO: Play end game and change scene (call to EndGame() coroutine)
+        }
     }
 
     // Methods to subscribe/unsubscribe to the events 
