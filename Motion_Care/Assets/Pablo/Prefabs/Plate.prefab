@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 6112699178354777696}
   - component: {fileID: 4897747150051324470}
   - component: {fileID: 600183810079910621}
+  - component: {fileID: 5181877102747835665}
   m_Layer: 31
   m_Name: Plate
   m_TagString: Untagged
@@ -498,6 +499,18 @@ MonoBehaviour:
   type: 0
   category: 0
   snapInteractable: {fileID: 1792759731775707123}
+--- !u!114 &5181877102747835665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933745958159821837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bd1f5c7ff383f498bb269eb6db1701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFarComedor
 --- !u!1001 &1101869687577949214
 PrefabInstance:
   m_ObjectHideFlags: 0

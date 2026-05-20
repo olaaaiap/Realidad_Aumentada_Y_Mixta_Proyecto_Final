@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1133592087509590}
   - component: {fileID: 2179733473235005188}
   - component: {fileID: 1586690477792699404}
+  - component: {fileID: 4665745605524187929}
   m_Layer: 31
   m_Name: Salami
   m_TagString: Untagged
@@ -102,6 +103,18 @@ MonoBehaviour:
   type: 1
   category: 4
   snapInteractable: {fileID: 2580115750820036910}
+--- !u!114 &4665745605524187929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398575755587145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bd1f5c7ff383f498bb269eb6db1701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnWhenFarComedor
 --- !u!1 &767341933655894840
 GameObject:
   m_ObjectHideFlags: 0
