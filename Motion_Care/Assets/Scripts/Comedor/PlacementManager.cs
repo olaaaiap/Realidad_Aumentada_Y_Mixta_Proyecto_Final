@@ -40,7 +40,7 @@ public class PlacementManager : MonoBehaviour
 
                 obj.transform.rotation = slot.transform.rotation;
                 obj.LockObject();
-                GameManagerComedor.Instance.CubiertoColocado();
+                GameManagerComedor.Instance.CubiertoColocado(cm);
             }
             else
             {
