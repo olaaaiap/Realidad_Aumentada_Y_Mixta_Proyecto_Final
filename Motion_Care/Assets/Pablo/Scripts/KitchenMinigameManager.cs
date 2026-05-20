@@ -162,6 +162,7 @@ public class KitchenMinigameManager : MonoBehaviour
         _hasChecked = false;
         _hasStarted = true;
 
+        SandwichManager.instance.EmptySandwich();
         _results.Reset();
         
         InitRecipe();
