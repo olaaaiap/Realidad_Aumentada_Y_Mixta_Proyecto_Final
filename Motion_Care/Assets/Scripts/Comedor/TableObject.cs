@@ -6,34 +6,27 @@ public class TableObject : MonoBehaviour
 {
     public string objectID;
 
-    public void LockObject()
+    public void BloquearPosicion()
     {
-        // 1. bloquear interacci�n Meta
         var grab = GetComponent<HandGrabInteractable>();
-        if (grab != null)
-            grab.enabled = false;
-
+        if (grab != null) grab.enabled = false;
 
         Transform pourSpace = transform.Find("PourSpace");
 
         if (pourSpace != null)
         {
-            Debug.Log("olaia. poursace encontrado");
-            CapsuleCollider capsule = pourSpace.GetComponent<CapsuleCollider>();
+            CapsuleCollider capsuleCollider = pourSpace.GetComponent<CapsuleCollider>();
 
-            if (capsule != null)
+            if (capsuleCollider != null)
             {
-                Debug.Log("olaia. capsule enabled");
-                capsule.enabled = true;
+                capsuleCollider.enabled = true;
             }
         }
 
 
         var grabbable = GetComponent<Grabbable>();
-        if (grabbable != null)
-            grabbable.enabled = false;
+        if (grabbable != null) grabbable.enabled = false;
 
-        // 2. bloquear f�sica
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {

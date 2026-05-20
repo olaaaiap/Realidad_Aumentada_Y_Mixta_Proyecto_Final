@@ -17,34 +17,19 @@ public class PlacementManager : MonoBehaviour
             if (slot.objectID != obj.objectID)
                 continue;
 
-            float distance =
-            Vector3.Distance(
-                obj.transform.position,
-                slot.transform.position);
+            float distancia =
+            Vector3.Distance(obj.transform.position, slot.transform.position);
 
-            float cm = distance * 100;
-
-            Debug.Log(
-                obj.objectID +
-                " desviación: " +
-                cm +
-                " cm"
-            );
-
-            if (distance < slot.radioMargen)
+            float cm = distancia * 100;
+            if (distancia < slot.radioMargen)
             {
-                Debug.Log("Correcto");
                 if (aciertoAS != null) aciertoAS.Play();
 
                 obj.transform.position = slot.transform.position;
 
                 obj.transform.rotation = slot.transform.rotation;
-                obj.LockObject();
+                obj.BloquearPosicion();
                 GameManagerComedor.Instance.CubiertoColocado(cm);
-            }
-            else
-            {
-                Debug.Log("Demasiado lejos");
             }
 
             break;

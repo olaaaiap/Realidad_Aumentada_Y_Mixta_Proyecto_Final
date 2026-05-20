@@ -6,37 +6,30 @@ public class ReleaseDetector : MonoBehaviour
 {
     HandGrabInteractable interactable;
 
-    bool previousState;
+    bool estadoAnterior;
 
     TableObject tableObj;
 
     void Start()
     {
-        interactable =
-            GetComponent<HandGrabInteractable>();
-
-        tableObj =
-            GetComponent<TableObject>();
+        interactable = GetComponent<HandGrabInteractable>();
+        tableObj = GetComponent<TableObject>();
     }
 
     void Update()
     {
-        bool currentState =
-            interactable.State ==
-            InteractableState.Select;
+        bool currentState = interactable.State == InteractableState.Select;
 
-        if (previousState && !currentState)
+        if (estadoAnterior && !currentState)
         {
-            Released();
+            ObjetoSoltado();
         }
 
-        previousState = currentState;
+        estadoAnterior = currentState;
     }
 
-    void Released()
+    void ObjetoSoltado()
     {
-        Debug.Log("Objeto soltado");
-
         PlacementManager.Instance.CheckPlacement(tableObj);
     }
 
