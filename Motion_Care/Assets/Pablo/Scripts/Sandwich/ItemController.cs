@@ -46,6 +46,22 @@ public class ItemController : MonoBehaviour
         _hasSnapped = false;
     }
 
+    private void Start()
+    {
+        if (type != ItemType.PLATE)
+        {
+            KitchenMinigameManager.instance.SubscribeToRecipeCheck(OnCheckRecipe);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (type != ItemType.PLATE)
+        {
+            KitchenMinigameManager.instance.UnsubscribeToRecipeCheck(OnCheckRecipe);
+        }
+    }
+
     private void Update()
     {
         if (snapInteractable.InteractorViews.Any() && !_hasSnapped)
@@ -77,5 +93,10 @@ public class ItemController : MonoBehaviour
     public ItemType GetItemType()
     {
         return this.type;
+    }
+    
+    private void OnCheckRecipe(ComparisonResult results)
+    {
+        Destroy(this.gameObject);
     }
 }
