@@ -98,7 +98,6 @@ public class KitchenMinigameManager : MonoBehaviour
         itemNames[ItemCategory.TOMATO] = "Tomate";
         
         _recipe = new List<ItemCategory>();
-
         _results = new ComparisonResult();
         
         if (_checkRecipeEvent == null) _checkRecipeEvent = new UnityEvent<ComparisonResult>();
@@ -106,6 +105,9 @@ public class KitchenMinigameManager : MonoBehaviour
 
         _hasStarted = false;
         _hasChecked = false;
+        
+        _currentDifficulty = startDifficulty;
+        _currentRound = 0;
     }
     
     // Function that initializes each round
@@ -143,6 +145,8 @@ public class KitchenMinigameManager : MonoBehaviour
 
     private IEnumerator RoundCoroutine()
     {
+        _currentRound++;
+        
         _hasChecked = false;
         _hasStarted = true;
 
