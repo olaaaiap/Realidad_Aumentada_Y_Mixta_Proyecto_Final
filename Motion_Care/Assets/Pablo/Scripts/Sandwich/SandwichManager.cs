@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SandwichManager : MonoBehaviour
+public class SandwichManager : Singleton<SandwichManager>
 {
     // VARIABLES //
-
-    public static SandwichManager instance;
     
     private List<ItemController> _sandwich;
     
@@ -15,15 +13,6 @@ public class SandwichManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
         _sandwich = new List<ItemController>();
     }
 

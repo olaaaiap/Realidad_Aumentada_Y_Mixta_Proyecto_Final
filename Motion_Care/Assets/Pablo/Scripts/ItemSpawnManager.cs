@@ -2,11 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class ItemSpawnManager : MonoBehaviour
+public class ItemSpawnManager : Singleton<ItemSpawnManager>
 {
     // VARIABLES //
-    
-    public static ItemSpawnManager instance;
     
     [Header("Item Prefabs")]
     [SerializeField] private List<GameObject> itemPrefabs;
@@ -20,16 +18,6 @@ public class ItemSpawnManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
-        // Fill the enum to prefab dictionary
         _itemPrefabDict = new Dictionary<int, GameObject>();
         
         foreach (GameObject itemPrefab in itemPrefabs)

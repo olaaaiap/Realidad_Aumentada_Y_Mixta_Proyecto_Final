@@ -5018,7 +5018,7 @@ MonoBehaviour:
   nRounds: 3
   nRoundItems: 020000000300000005000000
   playDelay: 3
-  startDifficulty: 2
+  startDifficulty: 0
   easySpawnPoints:
   - {fileID: 6589719167850938333}
   - {fileID: 6737653044246946910}

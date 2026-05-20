@@ -13,12 +13,9 @@ public enum Difficulty
     HARD
 }
 
-public class KitchenMinigameManager : MonoBehaviour
+public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
 {
     // VARIABLES //
-    
-    // GameManager singleton
-    public static KitchenMinigameManager instance;
 
     // Testing variables
     [Header("Testing")]
@@ -90,15 +87,6 @@ public class KitchenMinigameManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
         itemNames = new Dictionary<ItemCategory, string>();
         itemNames[ItemCategory.BREAD] = "Pan";
         itemNames[ItemCategory.HAM] = "Jamón";
