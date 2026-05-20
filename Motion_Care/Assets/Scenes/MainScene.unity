@@ -906,6 +906,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2311477854575741710, guid: 323a625e9f9646045842c7e5cd21aa42, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2361698097345545584, guid: 323a625e9f9646045842c7e5cd21aa42, type: 3}
       propertyPath: m_Name
       value: SalaEstar Variant
