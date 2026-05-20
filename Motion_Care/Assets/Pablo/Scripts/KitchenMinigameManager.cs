@@ -46,6 +46,11 @@ public class KitchenMinigameManager : MonoBehaviour
     [SerializeField] private int overPoints;
     [SerializeField] private int underPoints;
     
+    // Sound
+    [Header("Audio")]
+    [SerializeField] private string introClipName;
+    [SerializeField] private string nextRoundClipName;
+    
     // Sandwich characteristics
     public Dictionary<ItemCategory, string> itemNames;
     private List<ItemCategory> _recipe;
@@ -117,7 +122,7 @@ public class KitchenMinigameManager : MonoBehaviour
 
     private void Start()
     {
-        // TODO: Play intro and wait for player input to start the game
+        MinigameAudioManager.instance.PlayClip(introClipName);
     }
     
     // Function that initializes each round
@@ -151,7 +156,7 @@ public class KitchenMinigameManager : MonoBehaviour
     // Functions to start the round
     public void StartRoundCoroutine()
     {
-        // TODO: Stop Audio
+        MinigameAudioManager.instance.StopAudio();
         StartCoroutine(RoundCoroutine());
     }
 
@@ -239,6 +244,10 @@ public class KitchenMinigameManager : MonoBehaviour
         {
             _hasEnded = true;
             // TODO: Play end game and change scene (call to EndGame() coroutine)
+        }
+        else
+        {
+            MinigameAudioManager.instance.PlayClip(nextRoundClipName);
         }
     }
 
