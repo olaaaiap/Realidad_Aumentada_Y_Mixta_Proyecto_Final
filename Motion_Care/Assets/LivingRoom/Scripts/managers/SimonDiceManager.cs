@@ -66,7 +66,6 @@ public class SimonDiceManager : MonoBehaviour
             obj.GetComponent<Rigidbody>().useGravity = true;
             obj.GetComponent<Rigidbody>().isKinematic = false;
 
-            // Guardar posición correcta aquí
             obj.GetComponent<ReinicioCaidaManager>().GuardarPosicionForzada();
         }
     }

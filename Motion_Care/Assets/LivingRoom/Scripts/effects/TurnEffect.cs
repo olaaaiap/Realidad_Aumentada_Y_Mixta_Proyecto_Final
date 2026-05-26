@@ -6,7 +6,6 @@ public class TurnEffect : MonoBehaviour
     private bool faceUp = false;
     private float transformInicial;
     private Vector3 sizeMesh;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Girar()
     {
         transformInicial = transform.position.y;

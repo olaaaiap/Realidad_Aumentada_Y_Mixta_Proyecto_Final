@@ -18,14 +18,12 @@ public class ReinicioCaidaManager : MonoBehaviour
 
     void Update()
     {
-        // Si ya tenemos posición guardada y el objeto cae por debajo del límite
         if (posicionGuardadaLista && transform.position.y < alturaCaidaY)
         {
             ReiniciarObjeto();
         }
     }
 
-    // Llamado desde FixAppearAnimation2 cuando el objeto aparece en la mesa
     public void GuardarPosicionForzada()
     {
         posicionGuardada = transform.position;
@@ -37,16 +35,13 @@ public class ReinicioCaidaManager : MonoBehaviour
 
     private void ReiniciarObjeto()
     {
-        // Resetear física
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
 
-        // Volver a la posición guardada
         transform.position = posicionGuardada;
         transform.rotation = rotacionGuardada;
 
-        // Reactivar física
         rb.isKinematic = false;
 
         Debug.Log($"{name} → reseteado a su posición guardada");
