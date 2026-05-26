@@ -759,6 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!1001 &4068757138967819641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -994,6 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!4 &8068191192902289988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219663367267932580, guid: 3756c03a9b46c2d47bd820741534ab16, type: 3}
@@ -1234,6 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!4 &8691770447974218634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219663367267932580, guid: 203bdf1a8c2f8654fb3732bfa6eeeb91, type: 3}
@@ -1325,6 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!1001 &6966718532318934202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1411,6 +1415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!1001 &7037541654181833251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1496,15 +1501,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.505
+      value: -1.912
       objectReference: {fileID: 0}
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.764
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.476
+      value: -4.521
       objectReference: {fileID: 0}
     - target: {fileID: 558931850492392400, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1540,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5201776870126828047, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101819584061275, guid: 1847bc75c8fc14846be4e32e41f2a015, type: 3}
       propertyPath: m_IsActive
@@ -1664,6 +1669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!1001 &8083502975785916597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1745,6 +1751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
 --- !u!4 &6665562636402262289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3219663367267932580, guid: 0f163edb4e88b0d4ca18a03fd48cae54, type: 3}
@@ -1990,3 +1997,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1176a093a6affd441bfe87a9033455eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReinicioCaidaManager
+  alturaCaidaY: 0
