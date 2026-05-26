@@ -16,7 +16,7 @@ public class TurnEffect : MonoBehaviour
             transform.DOMoveY(transformInicial + 0.1f, 0.5f)
                 .OnComplete(() =>
                 {
-                    transform.DORotate(new Vector3(-90, 0, 0), 0.5f, RotateMode.Fast)
+                    transform.DORotate(new Vector3(-90, 0, 180), 0.5f, RotateMode.Fast)
                        .OnComplete(() =>
                        {
                            transform.DOMoveY(transformInicial + sizeMesh.y, 0.5f, false);
