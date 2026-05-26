@@ -57,5 +57,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(SalaCompletada());
         Debug.Log("TODOS LOS MINIJUEGOS COMPLETADOS");
+        FindFirstObjectByType<GeneralGameManager>().NextGame();
     }
 }

@@ -9,6 +9,7 @@ public class BottlePour : MonoBehaviour
     [SerializeField] private GameObject dropPrefab;
     [SerializeField] private Transform tipTransform;
     [SerializeField] private AudioSource victoriaAS;
+    [SerializeField] private AudioSource aciertoAS;
 
     public CupVolume cup;
 
@@ -51,6 +52,8 @@ public class BottlePour : MonoBehaviour
         aguaTerminada = true;
         pourCoroutine = null;
 
+        if (aciertoAS != null) aciertoAS.Play();
+
         yield return new WaitForSeconds(5f);
 
         if (DataManager.instance)
@@ -65,7 +68,8 @@ public class BottlePour : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        victoriaAS.Play();
+        if (victoriaAS != null)  victoriaAS.Play();
+
         FindFirstObjectByType<GeneralGameManager>().NextGame();
     }
 

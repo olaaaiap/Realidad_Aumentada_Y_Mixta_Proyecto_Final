@@ -7,6 +7,7 @@ public class GeneralGameManager : MonoBehaviour
     [SerializeField] private GameObject comedorGO;
     [SerializeField] private GameObject salaGO;
     [SerializeField] private GameObject cocinaGO;
+    [SerializeField] private AudioSource finalAS;
 
     private GameObject[] games;
     private int currentIndex = 0;
@@ -60,5 +61,22 @@ public class GeneralGameManager : MonoBehaviour
         {
             games[i].SetActive(i == index);
         }
+    }
+
+    public void ReproducirAudioFinal()
+    {
+        finalAS.Play();
+        StartCoroutine(CerrarAlTerminar());
+    }
+
+    IEnumerator CerrarAlTerminar()
+    {
+        yield return new WaitForSeconds(finalAS.clip.length);
+
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

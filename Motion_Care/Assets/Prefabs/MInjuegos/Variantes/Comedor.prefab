@@ -5539,6 +5539,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8850497753074539428}
     - target: {fileID: 6110023944930247935, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
+      propertyPath: aciertoAS
+      value: 
+      objectReference: {fileID: 1263527582889078832}
+    - target: {fileID: 6110023944930247935, guid: ffbfd2c24a85ce048b9ea00587226fc6, type: 3}
       propertyPath: victoriaAS
       value: 
       objectReference: {fileID: 1235601664581016549}
