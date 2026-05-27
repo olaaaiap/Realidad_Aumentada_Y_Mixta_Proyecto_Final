@@ -51,7 +51,8 @@ public class GeneralGameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No hay más juegos.");
+            ReproducirAudioFinal();
+            Debug.Log("No hay mï¿½s juegos.");
         }
     }
 

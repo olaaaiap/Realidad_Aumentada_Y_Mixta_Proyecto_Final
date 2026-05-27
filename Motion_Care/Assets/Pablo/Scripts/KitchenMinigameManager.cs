@@ -276,6 +276,7 @@ public class KitchenMinigameManager : Singleton<KitchenMinigameManager>
         yield return new WaitForSeconds(MinigameAudioManager.instance.GetClipLength(endGameClipName));
         
         DataManager.instance.EndSession();
+        FindFirstObjectByType<GeneralGameManager>().NextGame();
     }
 
     // Methods to subscribe/unsubscribe to the events 

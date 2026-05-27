@@ -71,17 +71,13 @@ public class ItemController : MonoBehaviour
             SnapInteractor view = snapInteractable.InteractorViews.First() as SnapInteractor;
             ItemController item = view.transform.GetComponentInParent<ItemController>();
             SandwichManager.instance.AddItem(item);
-            
-            // SandwichManager.instance.ShowSandwich();
         } 
         else if (!snapInteractable.InteractorViews.Any() && _hasSnapped)
         {
             _hasSnapped = false;
             
-            // Being a stack, we can only remove the last item added, which is the one being removed from the socket
+            // Remove the last item added, which is the one being removed from the socket
             SandwichManager.instance.RemoveItem();
-            
-            // SandwichManager.instance.ShowSandwich();
         }
     }
 
