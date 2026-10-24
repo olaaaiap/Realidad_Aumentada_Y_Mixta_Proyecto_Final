@@ -1,3 +1,6 @@
+[🇪🇸 Español](README.md) | [🇬🇧 English](README.en.md)
+
+
 video:
 https://youtu.be/fBF2XPzVjmY
 
